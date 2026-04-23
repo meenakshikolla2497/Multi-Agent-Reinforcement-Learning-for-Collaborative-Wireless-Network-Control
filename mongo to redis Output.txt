@@ -1,0 +1,782 @@
+Last login: Wed Mar  4 23:06:41 on ttys000
+(base) manikantakolla@Manikantas-MacBook-Air-2 ~ % redis-cli
+127.0.0.1:6379> ping
+PONG
+127.0.0.1:6379> HSET employee:100 name Rahul age 22 salary 25000 city Hyderabad
+
+(integer) 4
+127.0.0.1:6379> HSET employee:101 name Sneha age 23 salary 30000 city Vijayawada
+(integer) 4
+127.0.0.1:6379> HSET employee:102 name Arjun age 21 salary 28000 city Chennai
+(integer) 4
+127.0.0.1:6379> HSET employee:103 name Priya age 24 salary 32000 city Bangalore
+
+(integer) 4
+127.0.0.1:6379> HSET employee:104 name Kiran age 22 salary 27000 city Hyderabad
+
+(integer) 4
+127.0.0.1:6379> HSET employee:105 name Ramesh age 25 salary 35000 city Hyderabad
+(integer) 4
+127.0.0.1:6379> HSET employee:106 name Anjali age 23 salary 29000 city Chennai
+(integer) 4
+127.0.0.1:6379> HSET employee:107 name Vikram age 26 salary 40000 city Bangalore
+(integer) 4
+127.0.0.1:6379> HSET employee:108 name Divya age 22 salary 26000 city Vijayawada
+(integer) 4
+127.0.0.1:6379> HSET employee:109 name Suresh age 24 salary 31000 city Hyderabad
+(integer) 4
+127.0.0.1:6379> HSET employee:110 name Kavya age 21 salary 24000 city Chennai
+(integer) 4
+127.0.0.1:6379> KEYS employee:*
+ 1) "employee:103"
+ 2) "employee:105"
+ 3) "employee:108"
+ 4) "employee:100"
+ 5) "employee:107"
+ 6) "employee:101"
+ 7) "employee:109"
+ 8) "employee:106"
+ 9) "employee:104"
+10) "employee:102"
+11) "employee:110"
+127.0.0.1:6379> SORT employee:*ALPHA
+(empty array)
+127.0.0.1:6379> KEYS employee:*
+ 1) "employee:103"
+ 2) "employee:105"
+ 3) "employee:108"
+ 4) "employee:100"
+ 5) "employee:107"
+ 6) "employee:101"
+ 7) "employee:109"
+ 8) "employee:106"
+ 9) "employee:104"
+10) "employee:102"
+11) "employee:110"
+127.0.0.1:6379> SISMEMBER city:Hyderabad 100
+(integer) 0
+127.0.0.1:6379> HGETALL employee:100
+1) "name"
+2) "Rahul"
+3) "age"
+4) "22"
+5) "salary"
+6) "25000"
+7) "city"
+8) "Hyderabad"
+127.0.0.1:6379> SADD city:Hyderabad 100 104 105 109
+(integer) 4
+127.0.0.1:6379> SADD city:Chennai 102 106 110
+(integer) 3
+127.0.0.1:6379> SADD city:Bangalore 103 107
+(integer) 2
+127.0.0.1:6379> SADD city:Vijayawada 101 108
+(integer) 2
+127.0.0.1:6379> SMEMBERS city:Hyderabad
+1) "100"
+2) "104"
+3) "105"
+4) "109"
+127.0.0.1:6379> SMEMBERS age:22
+(empty array)
+127.0.0.1:6379> HGET employee:100 salary
+"25000"
+127.0.0.1:6379> HGET employee:104 salary
+"27000"
+127.0.0.1:6379> HGET employee:108 salary
+"26000"
+127.0.0.1:6379> SMEMBERS age:23
+(empty array)
+127.0.0.1:6379> HGET employee:101 salary
+"30000"
+127.0.0.1:6379> HGET employee:106 salary
+"29000"
+127.0.0.1:6379> SMEMBERS age:24
+(empty array)
+127.0.0.1:6379> HGET employee:103 salary
+"32000"
+127.0.0.1:6379> HGET employee:109 salary
+"31000"
+127.0.0.1:6379> SADD idrange:100-110 100 101 102 103 104 105 106 107 108 109 110
+(integer) 11
+127.0.0.1:6379> SADD agerange:20-25 100 101 102 103 104 105 106 108 109 110
+(integer) 10
+127.0.0.1:6379> SADD city:Hyderabad 100 104 105 109
+(integer) 0
+127.0.0.1:6379> ZADD salaryIndex 25000 100
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 30000 101
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 28000 102
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 32000 103
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 27000 104
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 35000 105
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 29000 106
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 40000 107
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 26000 108
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 31000 109
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 24000 110
+(integer) 1
+127.0.0.1:6379> ZRANGEBYSCORE salaryIndex 150000 +inf
+(empty array)
+127.0.0.1:6379> SINTER idrange:100-110 agerange:20-25 city:Hyderabad
+1) "100"
+2) "104"
+3) "105"
+4) "109"
+127.0.0.1:6379> ZRANGEBYSCORE salaryIndex 150000 +inf
+(empty array)
+127.0.0.1:6379> salaryIndex
+(error) ERR unknown command 'salaryIndex'
+127.0.0.1:6379> ZRANGE salaryIndex 0 -1 WITHSCORES
+ 1) "110"
+ 2) "24000"
+ 3) "100"
+ 4) "25000"
+ 5) "108"
+ 6) "26000"
+ 7) "104"
+ 8) "27000"
+ 9) "102"
+10) "28000"
+11) "106"
+12) "29000"
+13) "101"
+14) "30000"
+15) "109"
+16) "31000"
+17) "103"
+18) "32000"
+19) "105"
+20) "35000"
+21) "107"
+22) "40000"
+127.0.0.1:6379> ZREMRANGEBYSCORE salaryIndex -inf +inf
+(integer) 11
+127.0.0.1:6379> ZSCAN salaryIndex 0
+1) "0"
+2) (empty array)
+127.0.0.1:6379> ZREMRANGEBYSCORE salaryIndex -inf +inf
+(integer) 0
+127.0.0.1:6379> ZRANGE salaryIndex 0 -1 WITHSCORES
+(empty array)
+127.0.0.1:6379> ZADD ageIndex 22 100
+(integer) 1
+127.0.0.1:6379> ZADD ageIndex 23 101
+(integer) 1
+127.0.0.1:6379> ZADD ageIndex 21 102
+(integer) 1
+127.0.0.1:6379> ZADD ageIndex 24 103
+(integer) 1
+127.0.0.1:6379> ZADD ageIndex 22 104
+(integer) 1
+127.0.0.1:6379> ZADD ageIndex 25 105
+(integer) 1
+127.0.0.1:6379> ZADD ageIndex 23 106
+(integer) 1
+127.0.0.1:6379> ZADD ageIndex 26 107
+(integer) 1
+127.0.0.1:6379> ZADD ageIndex 22 108
+(integer) 1
+127.0.0.1:6379> ZADD ageIndex 24 109
+(integer) 1
+127.0.0.1:6379> ZADD ageIndex 21 110
+(integer) 1
+127.0.0.1:6379> ZRANGE salaryIndex 0 0 WITHSCORES
+(empty array)
+127.0.0.1:6379> ZRANGE salaryIndex 0 0 WITHSCORES
+(empty array)
+127.0.0.1:6379> ZREVRANGE salaryIndex 0 0 WITHSCORES
+(empty array)
+127.0.0.1:6379> ZRANGE ageIndex 0 0 WITHSCORES
+1) "102"
+2) "21"
+127.0.0.1:6379> ZREVRANGE ageIndex 0 0 WITHSCORES
+1) "107"
+2) "26"
+127.0.0.1:6379> ZADD salaryIndex 25000 100
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 30000 101
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 28000 102
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 32000 103
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 27000 104
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 35000 105
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 29000 106
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 40000 107
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 26000 108
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 31000 109
+(integer) 1
+127.0.0.1:6379> ZADD salaryIndex 24000 110
+(integer) 1
+127.0.0.1:6379> ZRANGE salaryIndex 0 -1 WITHSCORES
+ 1) "110"
+ 2) "24000"
+ 3) "100"
+ 4) "25000"
+ 5) "108"
+ 6) "26000"
+ 7) "104"
+ 8) "27000"
+ 9) "102"
+10) "28000"
+11) "106"
+12) "29000"
+13) "101"
+14) "30000"
+15) "109"
+16) "31000"
+17) "103"
+18) "32000"
+19) "105"
+20) "35000"
+21) "107"
+22) "40000"
+127.0.0.1:6379> ZRANGE salaryIndex 0 0 WITHSCORES
+1) "110"
+2) "24000"
+127.0.0.1:6379> ZREVRANGE salaryIndex 0 0 WITHSCORES
+1) "107"
+2) "40000"
+127.0.0.1:6379> EVAL "
+Invalid argument(s)
+127.0.0.1:6379> local keys = redis.call('KEYS','employee:*')
+Invalid argument(s)
+127.0.0.1:6379> for i=1,#keys do
+(error) ERR unknown command 'for', with args beginning with: 'i=1,#keys' 'do' 
+127.0.0.1:6379>   local salary = redis.call('HGET',keys[i],'salary')
+Invalid argument(s)
+127.0.0.1:6379>   if salary then
+(error) ERR unknown command 'if', with args beginning with: 'salary' 'then' 
+127.0.0.1:6379>     local result = tonumber(salary) * 2 / 5
+(error) ERR unknown command 'local', with args beginning with: 'result' '=' 'tonumber(salary)' '*' '2' '/' '5' 
+127.0.0.1:6379>     redis.call('HSET',keys[i],'salary_2_5',result)
+Invalid argument(s)
+127.0.0.1:6379>   end
+(error) ERR unknown command 'end'
+127.0.0.1:6379> end
+(error) ERR unknown command 'end'
+127.0.0.1:6379> return 'Updated Successfully'
+(error) ERR unknown command 'return', with args beginning with: 'Updated Successfully' 
+127.0.0.1:6379> " 0
+Invalid argument(s)
+127.0.0.1:6379> EVAL "local keys=redis.call('KEYS','employee:*'); for i=1,#keys do local salary=redis.call('HGET',keys[i],'salary'); if salary then local result=tonumber(salary)*2/5; redis.call('HSET',keys[i],'salary_2_5',result); end; end; return 'Updated Successfully'" 0
+"Updated Successfully"
+127.0.0.1:6379> HGETALL employee:100
+ 1) "name"
+ 2) "Rahul"
+ 3) "age"
+ 4) "22"
+ 5) "salary"
+ 6) "25000"
+ 7) "city"
+ 8) "Hyderabad"
+ 9) "salary_2_5"
+10) "10000"
+127.0.0.1:6379> HGET employee:100 salary
+"25000"
+127.0.0.1:6379> HGET employee:101 salary
+"30000"
+127.0.0.1:6379> HGET employee:102 salary
+"28000"
+127.0.0.1:6379> HGET employee:103 salary
+"32000"
+127.0.0.1:6379> HGET employee:104 salary
+"27000"
+127.0.0.1:6379> HGET employee:105 salary
+"35000"
+127.0.0.1:6379> HGET employee:106 salary
+"29000"
+127.0.0.1:6379> HGET employee:107 salary
+"40000"
+127.0.0.1:6379> HGET employee:108 salary
+"26000"
+127.0.0.1:6379> HGET employee:109 salary
+"31000"
+127.0.0.1:6379> HGET employee:110 salary
+"24000"
+127.0.0.1:6379> HSET employee:100 salary_2_5 10000
+(integer) 0
+127.0.0.1:6379> HSET employee:101 salary_2_5 12000
+(integer) 0
+127.0.0.1:6379> HSET employee:102 salary_2_5 11200
+(integer) 0
+127.0.0.1:6379> HSET employee:103 salary_2_5 12800
+(integer) 0
+127.0.0.1:6379> HSET employee:104 salary_2_5 10800
+(integer) 0
+127.0.0.1:6379> HSET employee:105 salary_2_5 14000
+(integer) 0
+127.0.0.1:6379> HSET employee:106 salary_2_5 11600
+(integer) 0
+127.0.0.1:6379> HSET employee:107 salary_2_5 16000
+(integer) 0
+127.0.0.1:6379> HSET employee:108 salary_2_5 10400
+(integer) 0
+127.0.0.1:6379> HSET employee:109 salary_2_5 12400
+(integer) 0
+127.0.0.1:6379> HSET employee:110 salary_2_5 9600
+(integer) 0
+127.0.0.1:6379> HGETALL employee:107
+ 1) "name"
+ 2) "Vikram"
+ 3) "age"
+ 4) "26"
+ 5) "salary"
+ 6) "40000"
+ 7) "city"
+ 8) "Bangalore"
+ 9) "salary_2_5"
+10) "16000"
+127.0.0.1:6379>  HGETALL employee:101
+ 1) "name"
+ 2) "Sneha"
+ 3) "age"
+ 4) "23"
+ 5) "salary"
+ 6) "30000"
+ 7) "city"
+ 8) "Vijayawada"
+ 9) "salary_2_5"
+10) "12000"
+127.0.0.1:6379> SADD metro 100 102 103 104 105 106 107 109 110
+(integer) 9
+127.0.0.1:6379> SADD nonmetro 101 108
+(integer) 2
+127.0.0.1:6379> SADD rural
+(error) ERR wrong number of arguments for 'sadd' command
+127.0.0.1:6379> SMEMBERS metro
+1) "100"
+2) "102"
+3) "103"
+4) "104"
+5) "105"
+6) "106"
+7) "107"
+8) "109"
+9) "110"
+127.0.0.1:6379> HGET employee:100 salary
+"25000"
+127.0.0.1:6379> HGET employee:102 salary
+"28000"
+127.0.0.1:6379> HGET employee:103 salary
+"32000"
+127.0.0.1:6379> HGET employee:104 salary
+"27000"
+127.0.0.1:6379> HGET employee:105 salary
+"35000"
+127.0.0.1:6379> HGET employee:106 salary
+"29000"
+127.0.0.1:6379> HGET employee:107 salary
+"40000"
+127.0.0.1:6379> HGET employee:109 salary
+"31000"
+127.0.0.1:6379> HGET employee:110 salary
+"24000"
+127.0.0.1:6379> SMEMBERS nonmetro
+1) "101"
+2) "108"
+127.0.0.1:6379> HGET employee:101 salary
+"30000"
+127.0.0.1:6379> HGET employee:108 salary
+"26000"
+127.0.0.1:6379> HGET employee:100 salary
+"25000"
+127.0.0.1:6379> HSET employee:100 yearly_salary 300000
+(integer) 1
+127.0.0.1:6379> HSET employee:101 yearly_salary 360000
+(integer) 1
+127.0.0.1:6379> HSET employee:102 yearly_salary 336000
+(integer) 1
+127.0.0.1:6379> HSET employee:103 yearly_salary 384000
+(integer) 1
+127.0.0.1:6379> HSET employee:104 yearly_salary 324000
+(integer) 1
+127.0.0.1:6379> HSET employee:105 yearly_salary 420000
+(integer) 1
+127.0.0.1:6379> HSET employee:106 yearly_salary 348000
+(integer) 1
+127.0.0.1:6379> HSET employee:107 yearly_salary 480000
+(integer) 1
+127.0.0.1:6379> HSET employee:108 yearly_salary 312000
+(integer) 1
+127.0.0.1:6379> HSET employee:109 yearly_salary 372000
+(integer) 1
+127.0.0.1:6379> HSET employee:110 yearly_salary 288000
+(integer) 1
+127.0.0.1:6379> HGETALL employee:100
+ 1) "name"
+ 2) "Rahul"
+ 3) "age"
+ 4) "22"
+ 5) "salary"
+ 6) "25000"
+ 7) "city"
+ 8) "Hyderabad"
+ 9) "salary_2_5"
+10) "10000"
+11) "yearly_salary"
+12) "300000"
+127.0.0.1:6379> ZADD yearlyIndex 300000 100
+(integer) 1
+127.0.0.1:6379> ZADD yearlyIndex 360000 101
+(integer) 1
+127.0.0.1:6379> ZADD yearlyIndex 336000 102
+(integer) 1
+127.0.0.1:6379> ZADD yearlyIndex 384000 103
+(integer) 1
+127.0.0.1:6379> ZADD yearlyIndex 324000 104
+(integer) 1
+127.0.0.1:6379> ZADD yearlyIndex 420000 105
+(integer) 1
+127.0.0.1:6379> ZADD yearlyIndex 348000 106
+(integer) 1
+127.0.0.1:6379> ZADD yearlyIndex 480000 107
+(integer) 1
+127.0.0.1:6379> ZADD yearlyIndex 312000 108
+(integer) 1
+127.0.0.1:6379> ZADD yearlyIndex 372000 109
+(integer) 1
+127.0.0.1:6379> ZADD yearlyIndex 288000 110
+(integer) 1
+127.0.0.1:6379> ZRANGEBYSCORE yearlyIndex -inf 1200000
+ 1) "110"
+ 2) "100"
+ 3) "108"
+ 4) "104"
+ 5) "102"
+ 6) "106"
+ 7) "101"
+ 8) "109"
+ 9) "103"
+10) "105"
+11) "107"
+127.0.0.1:6379> ZRANGEBYSCORE yearlyIndex 1200000 +inf
+(empty array)
+127.0.0.1:6379> ZRANGEBYSCORE yearlyIndex 250000 +inf
+ 1) "110"
+ 2) "100"
+ 3) "108"
+ 4) "104"
+ 5) "102"
+ 6) "106"
+ 7) "101"
+ 8) "109"
+ 9) "103"
+10) "105"
+11) "107"
+127.0.0.1:6379> ZRANGEBYSCORE yearlyIndex -inf 250000
+(empty array)
+127.0.0.1:6379> HSET employee:100 tax 15000
+(integer) 1
+127.0.0.1:6379> HSET employee:101 tax 18000
+(integer) 1
+127.0.0.1:6379> HSET employee:102 tax 16800
+(integer) 1
+127.0.0.1:6379> HSET employee:103 tax 19200
+(integer) 1
+127.0.0.1:6379> HSET employee:104 tax 16200
+(integer) 1
+127.0.0.1:6379> HSET employee:105 tax 21000
+(integer) 1
+127.0.0.1:6379> HSET employee:106 tax 17400
+(integer) 1
+127.0.0.1:6379> HSET employee:107 tax 24000
+(integer) 1
+127.0.0.1:6379> HSET employee:108 tax 15600
+(integer) 1
+127.0.0.1:6379> HSET employee:109 tax 18600
+(integer) 1
+127.0.0.1:6379> HSET employee:110 tax 14400
+(integer) 1
+127.0.0.1:6379> HGETALL employee:100
+ 1) "name"
+ 2) "Rahul"
+ 3) "age"
+ 4) "22"
+ 5) "salary"
+ 6) "25000"
+ 7) "city"
+ 8) "Hyderabad"
+ 9) "salary_2_5"
+10) "10000"
+11) "yearly_salary"
+12) "300000"
+13) "tax"
+14) "15000"
+127.0.0.1:6379> HSET employee:100 bf 36000
+(integer) 1
+127.0.0.1:6379> HSET employee:101 bf 43200
+(integer) 1
+127.0.0.1:6379> HSET employee:102 bf 40320
+(integer) 1
+127.0.0.1:6379> HSET employee:103 bf 46080
+(integer) 1
+127.0.0.1:6379> HSET employee:104 bf 38880
+(integer) 1
+127.0.0.1:6379> HSET employee:105 bf 50400
+(integer) 1
+127.0.0.1:6379> HSET employee:106 bf 41760
+(integer) 1
+127.0.0.1:6379> HSET employee:107 bf 57600
+(integer) 1
+127.0.0.1:6379> HSET employee:108 bf 37440
+(integer) 1
+127.0.0.1:6379> HSET employee:109 bf 44640
+(integer) 1
+127.0.0.1:6379> HSET employee:110 bf 34560
+(integer) 1
+127.0.0.1:6379> HGETALL employee:105
+ 1) "name"
+ 2) "Ramesh"
+ 3) "age"
+ 4) "25"
+ 5) "salary"
+ 6) "35000"
+ 7) "city"
+ 8) "Hyderabad"
+ 9) "salary_2_5"
+10) "14000"
+11) "yearly_salary"
+12) "420000"
+13) "tax"
+14) "21000"
+15) "bf"
+16) "50400"
+127.0.0.1:6379> HSET employee:100 hra 60000
+(integer) 1
+127.0.0.1:6379> HSET employee:101 hra 72000
+(integer) 1
+127.0.0.1:6379> HSET employee:102 hra 67200
+(integer) 1
+127.0.0.1:6379> HSET employee:103 hra 76800
+(integer) 1
+127.0.0.1:6379> HSET employee:104 hra 64800
+(integer) 1
+127.0.0.1:6379> HSET employee:105 hra 84000
+(integer) 1
+127.0.0.1:6379> HSET employee:106 hra 69600
+(integer) 1
+127.0.0.1:6379> HSET employee:107 hra 96000
+(integer) 1
+127.0.0.1:6379> HSET employee:108 hra 62400
+(integer) 1
+127.0.0.1:6379> HSET employee:109 hra 74400
+(integer) 1
+127.0.0.1:6379> HSET employee:110 hra 57600
+(integer) 1
+127.0.0.1:6379> HGETALL employee:107
+ 1) "name"
+ 2) "Vikram"
+ 3) "age"
+ 4) "26"
+ 5) "salary"
+ 6) "40000"
+ 7) "city"
+ 8) "Bangalore"
+ 9) "salary_2_5"
+10) "16000"
+11) "yearly_salary"
+12) "480000"
+13) "tax"
+14) "24000"
+15) "bf"
+16) "57600"
+17) "hra"
+18) "96000"
+127.0.0.1:6379> FT.AGGREGATE employeeIdx "*"
+(error) ERR unknown command 'FT.AGGREGATE', with args beginning with: 'employeeIdx' '*' 
+127.0.0.1:6379> APPLY "@salary * 0.50" AS variable_pay
+(error) ERR unknown command 'APPLY', with args beginning with: '@salary * 0.50' 'AS' 'variable_pay' 
+127.0.0.1:6379> LOAD 1 @empid
+(error) ERR unknown command 'LOAD', with args beginning with: '1' '@empid' 
+127.0.0.1:6379> FT.AGGREGATE employeeIdx "*"
+(error) ERR unknown command 'FT.AGGREGATE', with args beginning with: 'employeeIdx' '*' 
+127.0.0.1:6379> APPLY "@salary * 12" AS annual_salary
+(error) ERR unknown command 'APPLY', with args beginning with: '@salary * 12' 'AS' 'annual_salary' 
+127.0.0.1:6379> APPLY "@annual_salary * 0.05" AS income_tax
+(error) ERR unknown command 'APPLY', with args beginning with: '@annual_salary * 0.05' 'AS' 'income_tax' 
+127.0.0.1:6379> APPLY "@salary * 0.12" AS bf
+(error) ERR unknown command 'APPLY', with args beginning with: '@salary * 0.12' 'AS' 'bf' 
+127.0.0.1:6379> APPLY "@salary * 0.20" AS hra
+(error) ERR unknown command 'APPLY', with args beginning with: '@salary * 0.20' 'AS' 'hra' 
+127.0.0.1:6379> APPLY "@salary * 0.50" AS variable_pay
+(error) ERR unknown command 'APPLY', with args beginning with: '@salary * 0.50' 'AS' 'variable_pay' 
+127.0.0.1:6379> LOAD 1 @empidFT.AGGREGATE employeeIdx "*"
+(error) ERR unknown command 'LOAD', with args beginning with: '1' '@empidFT.AGGREGATE' 'employeeIdx' '*' 
+127.0.0.1:6379> LOAD 2 @empid @salary
+(error) ERR unknown command 'LOAD', with args beginning with: '2' '@empid' '@salary' 
+127.0.0.1:6379> APPLY "@salary * 12" AS annual_salary
+(error) ERR unknown command 'APPLY', with args beginning with: '@salary * 12' 'AS' 'annual_salary' 
+127.0.0.1:6379> APPLY "@salary * 12 * 0.05" AS income_tax
+(error) ERR unknown command 'APPLY', with args beginning with: '@salary * 12 * 0.05' 'AS' 'income_tax' 
+127.0.0.1:6379> APPLY "@salary * 0.12" AS bf
+(error) ERR unknown command 'APPLY', with args beginning with: '@salary * 0.12' 'AS' 'bf' 
+127.0.0.1:6379> APPLY "@salary * 0.20" AS hra
+(error) ERR unknown command 'APPLY', with args beginning with: '@salary * 0.20' 'AS' 'hra' 
+127.0.0.1:6379> APPLY "@salary * 0.50" AS variable_pay
+(error) ERR unknown command 'APPLY', with args beginning with: '@salary * 0.50' 'AS' 'variable_pay' 
+127.0.0.1:6379> HGET emp:101 salary
+"180000"
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s*0.02" 1 emp:101
+(integer) 3600
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s*0.02" 1 emp:100
+(integer) 3000
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s*0.02" 1 emp:101
+(integer) 3600
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s*0.02" 1 emp:102
+(integer) 2400
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); local v=s*0.02; redis.call('HSET', KEYS[1], 'two_percent', v); return v" 1 emp:101
+(integer) 3600
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); local v=s*0.05; redis.call('HSET', KEYS[1], 'food_coupons', v); return v" 1 emp:101
+(integer) 9000
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); local v=s*0.05; redis.call('HSET', KEYS[1], 'food_coupons', v); return v" 1 emp:100
+(integer) 7500
+127.0.0.1:6379> HGET emp:101 food_coupons
+"9000"
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/30" 1 employee:100
+(integer) 833
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/30" 1 employee:101
+(integer) 1000
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/30" 1 employee:102
+(integer) 933
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/30" 1 employee:103
+(integer) 1066
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/30" 1 employee:104
+(integer) 900
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/30" 1 employee:105
+(integer) 1166
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/30" 1 employee:106
+(integer) 966
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/30" 1 employee:107
+(integer) 1333
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/30" 1 employee:108
+(integer) 866
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/30" 1 employee:109
+(integer) 1033
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/30" 1 employee:110
+(integer) 800
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/22" 1 employee:100
+(integer) 1136
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/22" 1 employee:101
+(integer) 1363
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/22" 1 employee:102
+(integer) 1272
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/22" 1 employee:103
+(integer) 1454
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/22" 1 employee:104
+(integer) 1227
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/22" 1 employee:105
+(integer) 1590
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/22" 1 employee:106
+(integer) 1318
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/22" 1 employee:107
+(integer) 1818
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/22" 1 employee:108
+(integer) 1181
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/22" 1 employee:109
+(integer) 1409
+127.0.0.1:6379> EVAL "local s=redis.call('HGET', KEYS[1], 'salary'); return s/22" 1 employee:110
+(integer) 1090
+127.0.0.1:6379> HSET employee:100 working_days 22 non_working_days 8
+(integer) 2
+127.0.0.1:6379> HSET employee:101 working_days 22 non_working_days 8
+(integer) 2
+127.0.0.1:6379> HSET employee:102 working_days 22 non_working_days 8
+(integer) 2
+127.0.0.1:6379> HSET employee:103 working_days 22 non_working_days 8
+(integer) 2
+127.0.0.1:6379> HSET employee:104 working_days 22 non_working_days 8
+(integer) 2
+127.0.0.1:6379> HSET employee:105 working_days 22 non_working_days 8
+(integer) 2
+127.0.0.1:6379> HSET employee:106 working_days 22 non_working_days 8
+(integer) 2
+127.0.0.1:6379> HSET employee:107 working_days 22 non_working_days 8
+(integer) 2
+127.0.0.1:6379> HSET employee:108 working_days 22 non_working_days 8
+(integer) 2
+127.0.0.1:6379> HSET employee:109 working_days 22 non_working_days 8
+(integer) 2
+127.0.0.1:6379> HSET employee:110 working_days 22 non_working_days 8
+(integer) 2
+127.0.0.1:6379> HGETALL employee:105
+ 1) "name"
+ 2) "Ramesh"
+ 3) "age"
+ 4) "25"
+ 5) "salary"
+ 6) "35000"
+ 7) "city"
+ 8) "Hyderabad"
+ 9) "salary_2_5"
+10) "14000"
+11) "yearly_salary"
+12) "420000"
+13) "tax"
+14) "21000"
+15) "bf"
+16) "50400"
+17) "hra"
+18) "84000"
+19) "working_days"
+20) "22"
+21) "non_working_days"
+22) "8"
+127.0.0.1:6379> HSET employee:100 holidays 2
+(integer) 1
+127.0.0.1:6379> HSET employee:101 holidays 2
+(integer) 1
+127.0.0.1:6379> HSET employee:102 holidays 2
+(integer) 1
+127.0.0.1:6379> HSET employee:103 holidays 2
+(integer) 1
+127.0.0.1:6379> HSET employee:104 holidays 2
+(integer) 1
+127.0.0.1:6379> HSET employee:105 holidays 2
+(integer) 1
+127.0.0.1:6379> HSET employee:106 holidays 2
+(integer) 1
+127.0.0.1:6379> HSET employee:107 holidays 2
+(integer) 1
+127.0.0.1:6379> HSET employee:108 holidays 2
+(integer) 1
+127.0.0.1:6379> HSET employee:109 holidays 2
+(integer) 1
+127.0.0.1:6379> HSET employee:110 holidays 2
+(integer) 1
+127.0.0.1:6379> HGET employee:105 holidays
+"2"
+127.0.0.1:6379> HSET aadhar:AD100 name "Ravi" salary 50000
+(integer) 2
+127.0.0.1:6379> HSET aadhar:AD101 name "Sneha" salary 60000
+(integer) 2
+127.0.0.1:6379> HSET aadhar:AD102 name "Amit" salary 55000
+(integer) 2
+127.0.0.1:6379> HSET aadhar:AD103 name "Priya" salary 65000
+(integer) 2
+127.0.0.1:6379> HSET aadhar:AD104 name "Rahul" salary 70000
+(integer) 2
+127.0.0.1:6379> HGETALL aadhar:AD101
+1) "name"
+2) "Sneha"
+3) "salary"
+4) "60000"
+127.0.0.1:6379> HGET aadhar:AD101 salary
+"60000"
+127.0.0.1:6379> 

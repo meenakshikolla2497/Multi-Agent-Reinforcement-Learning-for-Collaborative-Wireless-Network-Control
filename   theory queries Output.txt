@@ -1,0 +1,1315 @@
+Last login: Sun Mar  1 19:29:31 on ttys000
+(base) manikantakolla@Manikantas-MacBook-Air-2 ~ % mongosh
+Current Mongosh Log ID:	69a867e1c884b8699ed5e4be
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.10
+Using MongoDB:		8.2.3
+Using Mongosh:		2.5.10
+mongosh 2.7.0 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2026-02-20T01:34:41.883+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use empDB
+switched to db empDB
+empDB> db.emp.insertOne({empId: 100,name: "Anil",age: 23,city: "hyd",salary: 150000})
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+{
+  acknowledged: true,
+  insertedId: ObjectId('69a86821c884b8699ed5e4bf')
+}
+empDB> db.emp.insertMany([{ empId: 101, name: "Meena", age: 22, city: "hyd", salary: 180000 },{ empId: 102, name: "Ravi", age: 23, city: "vizag", salary: 120000 },{ empId: 103, name: "Sita", age: 21, city: "hyd", salary: 95000 },{ empId: 104, name: "Kiran", age: 25, city: "vijayawada", salary: 200000 },{ empId: 105, name: "Pooja", age: 24, city: "guntur", salary: 110000 },{ empId: 106, name: "Arjun", age: 26, city: "hyd", salary: 160000 },{ empId: 107, name: "Divya", age: 22, city: "vizag", salary: 130000 },{ empId: 108, name: "Suresh", age: 27, city: "nellore", salary: 140000 },{ empId: 109, name: "Lakshmi", age: 23, city: "hyd", salary: 170000 },{ empId: 110, name: "Naveen", age: 28, city: "kurnool", salary: 190000 }])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69a868f7c884b8699ed5e4c0'),
+    '1': ObjectId('69a868f7c884b8699ed5e4c1'),
+    '2': ObjectId('69a868f7c884b8699ed5e4c2'),
+    '3': ObjectId('69a868f7c884b8699ed5e4c3'),
+    '4': ObjectId('69a868f7c884b8699ed5e4c4'),
+    '5': ObjectId('69a868f7c884b8699ed5e4c5'),
+    '6': ObjectId('69a868f7c884b8699ed5e4c6'),
+    '7': ObjectId('69a868f7c884b8699ed5e4c7'),
+    '8': ObjectId('69a868f7c884b8699ed5e4c8'),
+    '9': ObjectId('69a868f7c884b8699ed5e4c9')
+  }
+}
+empDB> db.emp.find()
+[
+  {
+    _id: ObjectId('69955fcc435af1cc60abf95f'),
+    id: 101,
+    name: 'ratna',
+    age: 20,
+    city: 'vijayawada',
+    salary: 100000
+  },
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    empId: 100,
+    name: 'Anil',
+    age: 23,
+    city: 'hyd',
+    salary: 150000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    empId: 101,
+    name: 'Meena',
+    age: 22,
+    city: 'hyd',
+    salary: 180000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    empId: 102,
+    name: 'Ravi',
+    age: 23,
+    city: 'vizag',
+    salary: 120000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    empId: 103,
+    name: 'Sita',
+    age: 21,
+    city: 'hyd',
+    salary: 95000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    empId: 104,
+    name: 'Kiran',
+    age: 25,
+    city: 'vijayawada',
+    salary: 200000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    empId: 105,
+    name: 'Pooja',
+    age: 24,
+    city: 'guntur',
+    salary: 110000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    empId: 106,
+    name: 'Arjun',
+    age: 26,
+    city: 'hyd',
+    salary: 160000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    empId: 107,
+    name: 'Divya',
+    age: 22,
+    city: 'vizag',
+    salary: 130000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    empId: 108,
+    name: 'Suresh',
+    age: 27,
+    city: 'nellore',
+    salary: 140000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    empId: 109,
+    name: 'Lakshmi',
+    age: 23,
+    city: 'hyd',
+    salary: 170000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    empId: 110,
+    name: 'Naveen',
+    age: 28,
+    city: 'kurnool',
+    salary: 190000
+  }
+]
+empDB> db.emp.find({ empId: { $gte: 100 }, city: "hyd" })
+[
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    empId: 100,
+    name: 'Anil',
+    age: 23,
+    city: 'hyd',
+    salary: 150000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    empId: 101,
+    name: 'Meena',
+    age: 22,
+    city: 'hyd',
+    salary: 180000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    empId: 103,
+    name: 'Sita',
+    age: 21,
+    city: 'hyd',
+    salary: 95000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    empId: 106,
+    name: 'Arjun',
+    age: 26,
+    city: 'hyd',
+    salary: 160000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    empId: 109,
+    name: 'Lakshmi',
+    age: 23,
+    city: 'hyd',
+    salary: 170000
+  }
+]
+empDB> db.emp.find({ age: 22 },{ _id: 0, empId: 1, salary: 1 })
+[ { empId: 101, salary: 180000 }, { empId: 107, salary: 130000 } ]
+empDB> db.emp.find({ empId: { $gte: 100, $lte: 101 } })
+[
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    empId: 100,
+    name: 'Anil',
+    age: 23,
+    city: 'hyd',
+    salary: 150000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    empId: 101,
+    name: 'Meena',
+    age: 22,
+    city: 'hyd',
+    salary: 180000
+  }
+]
+empDB> db.emp.find({ empId: { $gte: 100, $lte: 110 } })
+[
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    empId: 100,
+    name: 'Anil',
+    age: 23,
+    city: 'hyd',
+    salary: 150000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    empId: 101,
+    name: 'Meena',
+    age: 22,
+    city: 'hyd',
+    salary: 180000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    empId: 102,
+    name: 'Ravi',
+    age: 23,
+    city: 'vizag',
+    salary: 120000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    empId: 103,
+    name: 'Sita',
+    age: 21,
+    city: 'hyd',
+    salary: 95000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    empId: 104,
+    name: 'Kiran',
+    age: 25,
+    city: 'vijayawada',
+    salary: 200000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    empId: 105,
+    name: 'Pooja',
+    age: 24,
+    city: 'guntur',
+    salary: 110000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    empId: 106,
+    name: 'Arjun',
+    age: 26,
+    city: 'hyd',
+    salary: 160000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    empId: 107,
+    name: 'Divya',
+    age: 22,
+    city: 'vizag',
+    salary: 130000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    empId: 108,
+    name: 'Suresh',
+    age: 27,
+    city: 'nellore',
+    salary: 140000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    empId: 109,
+    name: 'Lakshmi',
+    age: 23,
+    city: 'hyd',
+    salary: 170000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    empId: 110,
+    name: 'Naveen',
+    age: 28,
+    city: 'kurnool',
+    salary: 190000
+  }
+]
+empDB> db.emp.find({ empId: { $gte: 100, $lte: 110 },age: { $gte: 20, $lte: 25 },city: "hyd",salary: { $gt: 150000 }})
+[
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    empId: 101,
+    name: 'Meena',
+    age: 22,
+    city: 'hyd',
+    salary: 180000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    empId: 109,
+    name: 'Lakshmi',
+    age: 23,
+    city: 'hyd',
+    salary: 170000
+  }
+]
+empDB> db.emp.aggregate([{ $group: { _id: null, avgSalary: { $avg: "$salary" } } }])
+[ { _id: null, avgSalary: 145416.66666666666 } ]
+empDB> db.emp.aggregate([
+|   { $sort: { salary: 1 } },
+|   {
+|     $group: {
+|       _id: null,
+|       salaries: { $push: "$salary" }
+|     }
+|   },
+|   {
+|     $project: {
+|       medianSalary: {
+|         $arrayElemAt: [
+|           "$salaries",
+|           { $floor: { $divide: [{ $size: "$salaries" }, 2] } }
+|         ]
+|       }
+|     }
+|   }
+| ])
+[ { _id: null, medianSalary: 150000 } ]
+empDB> db.emp.aggregate([
+|   {
+|     $group: {
+|       _id: null,
+|       maxSalary: { $max: "$salary" },
+|       minSalary: { $min: "$salary" },
+|       maxAge: { $max: "$age" },
+|       minAge: { $min: "$age" }
+|     }
+|   }
+| ])
+[
+  {
+    _id: null,
+    maxSalary: 200000,
+    minSalary: 95000,
+    maxAge: 28,
+    minAge: 20
+  }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $group: {
+|       _id: "$areaType",   // values: "metro", "non-metro", "rural"
+|       totalSalary: { $sum: "$salary" }
+|     }
+|   }
+| ])
+[ { _id: null, totalSalary: 1745000 } ]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       yearlySalary: { $multiply: ["$salary", 12] }
+|     }
+|   }
+| ])
+[
+  {
+    _id: ObjectId('69955fcc435af1cc60abf95f'),
+    name: 'ratna',
+    yearlySalary: 1200000
+  },
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    name: 'Anil',
+    yearlySalary: 1800000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    name: 'Meena',
+    yearlySalary: 2160000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    name: 'Ravi',
+    yearlySalary: 1440000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    name: 'Sita',
+    yearlySalary: 1140000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    name: 'Kiran',
+    yearlySalary: 2400000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    name: 'Pooja',
+    yearlySalary: 1320000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    name: 'Arjun',
+    yearlySalary: 1920000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    name: 'Divya',
+    yearlySalary: 1560000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    name: 'Suresh',
+    yearlySalary: 1680000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    name: 'Lakshmi',
+    yearlySalary: 2040000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    name: 'Naveen',
+    yearlySalary: 2280000
+  }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       incomeStatus: {
+|         $cond: [
+|           { $lt: [{ $multiply: ["$salary", 12] }, 1200000] },
+|           "Below 12 Lakhs",
+|           "Above 12 Lakhs"
+|         ]
+|       }
+|     }
+|   }
+| ])
+[
+  {
+    _id: ObjectId('69955fcc435af1cc60abf95f'),
+    name: 'ratna',
+    incomeStatus: 'Above 12 Lakhs'
+  },
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    name: 'Anil',
+    incomeStatus: 'Above 12 Lakhs'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    name: 'Meena',
+    incomeStatus: 'Above 12 Lakhs'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    name: 'Ravi',
+    incomeStatus: 'Above 12 Lakhs'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    name: 'Sita',
+    incomeStatus: 'Below 12 Lakhs'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    name: 'Kiran',
+    incomeStatus: 'Above 12 Lakhs'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    name: 'Pooja',
+    incomeStatus: 'Above 12 Lakhs'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    name: 'Arjun',
+    incomeStatus: 'Above 12 Lakhs'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    name: 'Divya',
+    incomeStatus: 'Above 12 Lakhs'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    name: 'Suresh',
+    incomeStatus: 'Above 12 Lakhs'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    name: 'Lakshmi',
+    incomeStatus: 'Above 12 Lakhs'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    name: 'Naveen',
+    incomeStatus: 'Above 12 Lakhs'
+  }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       taxEligibility: {
+|         $cond: [
+|           { $gt: [{ $multiply: ["$salary", 12] }, 1200000] },
+|           "Eligible",
+|           "Not Eligible"
+|         ]
+|       }
+|     }
+|   }
+| ])
+[
+  {
+    _id: ObjectId('69955fcc435af1cc60abf95f'),
+    name: 'ratna',
+    taxEligibility: 'Not Eligible'
+  },
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    name: 'Anil',
+    taxEligibility: 'Eligible'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    name: 'Meena',
+    taxEligibility: 'Eligible'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    name: 'Ravi',
+    taxEligibility: 'Eligible'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    name: 'Sita',
+    taxEligibility: 'Not Eligible'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    name: 'Kiran',
+    taxEligibility: 'Eligible'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    name: 'Pooja',
+    taxEligibility: 'Eligible'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    name: 'Arjun',
+    taxEligibility: 'Eligible'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    name: 'Divya',
+    taxEligibility: 'Eligible'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    name: 'Suresh',
+    taxEligibility: 'Eligible'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    name: 'Lakshmi',
+    taxEligibility: 'Eligible'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    name: 'Naveen',
+    taxEligibility: 'Eligible'
+  }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       incomeTax: {
+|         $cond: [
+|           { $gt: [{ $multiply: ["$salary", 12] }, 1200000] },
+|           { $multiply: [{ $multiply: ["$salary", 12] }, 0.05] },
+|           0
+|         ]
+|       }
+|     }
+|   }
+| ])
+[
+  {
+    _id: ObjectId('69955fcc435af1cc60abf95f'),
+    name: 'ratna',
+    incomeTax: 0
+  },
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    name: 'Anil',
+    incomeTax: 90000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    name: 'Meena',
+    incomeTax: 108000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    name: 'Ravi',
+    incomeTax: 72000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    name: 'Sita',
+    incomeTax: 0
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    name: 'Kiran',
+    incomeTax: 120000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    name: 'Pooja',
+    incomeTax: 66000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    name: 'Arjun',
+    incomeTax: 96000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    name: 'Divya',
+    incomeTax: 78000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    name: 'Suresh',
+    incomeTax: 84000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    name: 'Lakshmi',
+    incomeTax: 102000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    name: 'Naveen',
+    incomeTax: 114000
+  }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       bf: { $multiply: ["$salary", 0.12] }
+|     }
+|   }
+| ])
+[
+  {
+    _id: ObjectId('69955fcc435af1cc60abf95f'),
+    name: 'ratna',
+    bf: 12000
+  },
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    name: 'Anil',
+    bf: 18000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    name: 'Meena',
+    bf: 21600
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    name: 'Ravi',
+    bf: 14400
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    name: 'Sita',
+    bf: 11400
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    name: 'Kiran',
+    bf: 24000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    name: 'Pooja',
+    bf: 13200
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    name: 'Arjun',
+    bf: 19200
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    name: 'Divya',
+    bf: 15600
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    name: 'Suresh',
+    bf: 16800
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    name: 'Lakshmi',
+    bf: 20400
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    name: 'Naveen',
+    bf: 22800
+  }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       hra: { $multiply: ["$salary", 0.40] }
+|     }
+|   }
+| ])
+[
+  {
+    _id: ObjectId('69955fcc435af1cc60abf95f'),
+    name: 'ratna',
+    hra: 40000
+  },
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    name: 'Anil',
+    hra: 60000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    name: 'Meena',
+    hra: 72000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    name: 'Ravi',
+    hra: 48000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    name: 'Sita',
+    hra: 38000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    name: 'Kiran',
+    hra: 80000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    name: 'Pooja',
+    hra: 44000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    name: 'Arjun',
+    hra: 64000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    name: 'Divya',
+    hra: 52000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    name: 'Suresh',
+    hra: 56000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    name: 'Lakshmi',
+    hra: 68000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    name: 'Naveen',
+    hra: 76000
+  }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       variablePay: { $multiply: ["$salary", 0.50] }
+|     }
+|   }
+| ])
+[
+  {
+    _id: ObjectId('69955fcc435af1cc60abf95f'),
+    name: 'ratna',
+    variablePay: 50000
+  },
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    name: 'Anil',
+    variablePay: 75000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    name: 'Meena',
+    variablePay: 90000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    name: 'Ravi',
+    variablePay: 60000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    name: 'Sita',
+    variablePay: 47500
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    name: 'Kiran',
+    variablePay: 100000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    name: 'Pooja',
+    variablePay: 55000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    name: 'Arjun',
+    variablePay: 80000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    name: 'Divya',
+    variablePay: 65000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    name: 'Suresh',
+    variablePay: 70000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    name: 'Lakshmi',
+    variablePay: 85000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    name: 'Naveen',
+    variablePay: 95000
+  }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       twoPercentAmount: { $multiply: ["$salary", 0.02] }
+|     }
+|   }
+| ])
+[
+  {
+    _id: ObjectId('69955fcc435af1cc60abf95f'),
+    name: 'ratna',
+    twoPercentAmount: 2000
+  },
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    name: 'Anil',
+    twoPercentAmount: 3000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    name: 'Meena',
+    twoPercentAmount: 3600
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    name: 'Ravi',
+    twoPercentAmount: 2400
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    name: 'Sita',
+    twoPercentAmount: 1900
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    name: 'Kiran',
+    twoPercentAmount: 4000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    name: 'Pooja',
+    twoPercentAmount: 2200
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    name: 'Arjun',
+    twoPercentAmount: 3200
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    name: 'Divya',
+    twoPercentAmount: 2600
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    name: 'Suresh',
+    twoPercentAmount: 2800
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    name: 'Lakshmi',
+    twoPercentAmount: 3400
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    name: 'Naveen',
+    twoPercentAmount: 3800
+  }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       foodCoupons: { $multiply: ["$salary", 0.05] }
+|     }
+|   }
+| ])
+[
+  {
+    _id: ObjectId('69955fcc435af1cc60abf95f'),
+    name: 'ratna',
+    foodCoupons: 5000
+  },
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    name: 'Anil',
+    foodCoupons: 7500
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    name: 'Meena',
+    foodCoupons: 9000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    name: 'Ravi',
+    foodCoupons: 6000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    name: 'Sita',
+    foodCoupons: 4750
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    name: 'Kiran',
+    foodCoupons: 10000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    name: 'Pooja',
+    foodCoupons: 5500
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    name: 'Arjun',
+    foodCoupons: 8000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    name: 'Divya',
+    foodCoupons: 6500
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    name: 'Suresh',
+    foodCoupons: 7000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    name: 'Lakshmi',
+    foodCoupons: 8500
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    name: 'Naveen',
+    foodCoupons: 9500
+  }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       perDaySalary: { $divide: ["$salary", 22] }
+|     }
+|   }
+| ])
+[
+  {
+    _id: ObjectId('69955fcc435af1cc60abf95f'),
+    name: 'ratna',
+    perDaySalary: 4545.454545454545
+  },
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    name: 'Anil',
+    perDaySalary: 6818.181818181818
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    name: 'Meena',
+    perDaySalary: 8181.818181818182
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    name: 'Ravi',
+    perDaySalary: 5454.545454545455
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    name: 'Sita',
+    perDaySalary: 4318.181818181818
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    name: 'Kiran',
+    perDaySalary: 9090.90909090909
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    name: 'Pooja',
+    perDaySalary: 5000
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    name: 'Arjun',
+    perDaySalary: 7272.727272727273
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    name: 'Divya',
+    perDaySalary: 5909.090909090909
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    name: 'Suresh',
+    perDaySalary: 6363.636363636364
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    name: 'Lakshmi',
+    perDaySalary: 7727.272727272727
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    name: 'Naveen',
+    perDaySalary: 8636.363636363636
+  }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       workingDays: 22
+|     }
+|   }
+| ])
+[
+  { _id: ObjectId('69955fcc435af1cc60abf95f'), name: 'ratna' },
+  { _id: ObjectId('69a86821c884b8699ed5e4bf'), name: 'Anil' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c0'), name: 'Meena' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c1'), name: 'Ravi' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c2'), name: 'Sita' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c3'), name: 'Kiran' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c4'), name: 'Pooja' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c5'), name: 'Arjun' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c6'), name: 'Divya' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c7'), name: 'Suresh' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c8'), name: 'Lakshmi' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c9'), name: 'Naveen' }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       workingDays: 22
+|     }
+|   }
+| ])
+[
+  { _id: ObjectId('69955fcc435af1cc60abf95f'), name: 'ratna' },
+  { _id: ObjectId('69a86821c884b8699ed5e4bf'), name: 'Anil' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c0'), name: 'Meena' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c1'), name: 'Ravi' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c2'), name: 'Sita' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c3'), name: 'Kiran' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c4'), name: 'Pooja' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c5'), name: 'Arjun' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c6'), name: 'Divya' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c7'), name: 'Suresh' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c8'), name: 'Lakshmi' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c9'), name: 'Naveen' }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       nonWorkingDays: 8
+|     }
+|   }
+| ])
+[
+  { _id: ObjectId('69955fcc435af1cc60abf95f'), name: 'ratna' },
+  { _id: ObjectId('69a86821c884b8699ed5e4bf'), name: 'Anil' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c0'), name: 'Meena' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c1'), name: 'Ravi' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c2'), name: 'Sita' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c3'), name: 'Kiran' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c4'), name: 'Pooja' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c5'), name: 'Arjun' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c6'), name: 'Divya' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c7'), name: 'Suresh' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c8'), name: 'Lakshmi' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c9'), name: 'Naveen' }
+]
+empDB> db.emp.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       holidays: 2
+|     }
+|   }
+| ])
+[
+  { _id: ObjectId('69955fcc435af1cc60abf95f'), name: 'ratna' },
+  { _id: ObjectId('69a86821c884b8699ed5e4bf'), name: 'Anil' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c0'), name: 'Meena' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c1'), name: 'Ravi' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c2'), name: 'Sita' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c3'), name: 'Kiran' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c4'), name: 'Pooja' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c5'), name: 'Arjun' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c6'), name: 'Divya' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c7'), name: 'Suresh' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c8'), name: 'Lakshmi' },
+  { _id: ObjectId('69a868f7c884b8699ed5e4c9'), name: 'Naveen' }
+]
+empDB> db.emp.updateOne(
+|   { empId: 101 },
+|   { $set: { aadharId: "AAD101" } }
+| )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+empDB> db.emp.updateMany(
+|   { empId: { $gte: 100, $lte: 110 } },
+|   [
+|     {
+|       $set: {
+|         aadharId: {
+|           $concat: ["AAD", { $toString: "$empId" }]
+|         }
+|       }
+|     }
+|   ]
+| )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 11,
+  modifiedCount: 10,
+  upsertedCount: 0
+}
+empDB> db.emp.find(
+|   { aadharId: "AAD101" },
+|   { _id: 0, name: 1, salary: 1 }
+| )
+[ { name: 'Meena', salary: 180000 } ]
+empDB> db.emp.find()
+[
+  {
+    _id: ObjectId('69955fcc435af1cc60abf95f'),
+    id: 101,
+    name: 'ratna',
+    age: 20,
+    city: 'vijayawada',
+    salary: 100000
+  },
+  {
+    _id: ObjectId('69a86821c884b8699ed5e4bf'),
+    empId: 100,
+    name: 'Anil',
+    age: 23,
+    city: 'hyd',
+    salary: 150000,
+    aadharId: 'AAD100'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c0'),
+    empId: 101,
+    name: 'Meena',
+    age: 22,
+    city: 'hyd',
+    salary: 180000,
+    aadharId: 'AAD101'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c1'),
+    empId: 102,
+    name: 'Ravi',
+    age: 23,
+    city: 'vizag',
+    salary: 120000,
+    aadharId: 'AAD102'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c2'),
+    empId: 103,
+    name: 'Sita',
+    age: 21,
+    city: 'hyd',
+    salary: 95000,
+    aadharId: 'AAD103'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c3'),
+    empId: 104,
+    name: 'Kiran',
+    age: 25,
+    city: 'vijayawada',
+    salary: 200000,
+    aadharId: 'AAD104'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c4'),
+    empId: 105,
+    name: 'Pooja',
+    age: 24,
+    city: 'guntur',
+    salary: 110000,
+    aadharId: 'AAD105'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c5'),
+    empId: 106,
+    name: 'Arjun',
+    age: 26,
+    city: 'hyd',
+    salary: 160000,
+    aadharId: 'AAD106'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c6'),
+    empId: 107,
+    name: 'Divya',
+    age: 22,
+    city: 'vizag',
+    salary: 130000,
+    aadharId: 'AAD107'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c7'),
+    empId: 108,
+    name: 'Suresh',
+    age: 27,
+    city: 'nellore',
+    salary: 140000,
+    aadharId: 'AAD108'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c8'),
+    empId: 109,
+    name: 'Lakshmi',
+    age: 23,
+    city: 'hyd',
+    salary: 170000,
+    aadharId: 'AAD109'
+  },
+  {
+    _id: ObjectId('69a868f7c884b8699ed5e4c9'),
+    empId: 110,
+    name: 'Naveen',
+    age: 28,
+    city: 'kurnool',
+    salary: 190000,
+    aadharId: 'AAD110'
+  }
+]
+empDB> 

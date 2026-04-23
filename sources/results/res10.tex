@@ -1,0 +1,42 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\usepackage{lmodern}
+\pgfplotsset{compat=1.17}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+ width=20cm,
+ height=15cm,
+ tick label style={font=\fontsize{24}{28}\selectfont},
+ label style={font=\fontsize{24}{28}\selectfont},
+ title style={font=\fontsize{24}{28}\selectfont},
+ title={Nodes vs Delay},
+ xlabel={Number of Nodes},
+ ylabel={Delay (sec)},
+ xmin=5, xmax=20,
+ ymin=0, ymax=0.016,
+ xtick={5,10,15,20},
+ ytick={0,0.002,0.004,0.006,0.008,0.010,0.012,0.014,0.016},
+ legend style={
+ font=\fontsize{24}{28}\selectfont,
+ at={(0.02,0.95)},
+ anchor=north west,
+ draw=black,
+ fill=white
+ },
+ ymajorgrids=true,
+ xmajorgrids=true,
+ grid style=dashed
+]
+
+% Delay line
+\addplot+[mark=o,color=blue,line width=2pt] coordinates {
+ (5,0.0005)(10,0.0011)(15,0.0158)(20,0.0006)
+};
+
+\legend{Proposed}
+
+\end{axis}
+\end{tikzpicture}
+\end{document}

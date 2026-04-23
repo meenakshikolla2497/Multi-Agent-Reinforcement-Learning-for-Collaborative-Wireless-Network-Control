@@ -1,0 +1,2119 @@
+Last login: Wed Feb 25 20:37:03 on ttys000
+(base) manikantakolla@Manikantas-MacBook-Air-2 ~ % mongosh
+Current Mongosh Log ID:	699f109bbcdf3cb7c6e37b99
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.10
+Using MongoDB:		8.2.3
+Using Mongosh:		2.5.10
+mongosh 2.7.0 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2026-02-20T01:34:41.883+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use kollaDB
+switched to db kollaDB
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+|   age: 24,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+|   age: 24,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+|   age: 24,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+|   name: "Keerthi",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+|   id: 101,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+| db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+| 
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+| })
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+|   city: "Hyderabad"
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+|   salary: 160000,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+|   age: 22,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+|   name: "Ratna",
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+|   id: 100,
+kollaDB> db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({
+kollaDB> db.kolla.insertOne({id: 100,name: "meena",age: 22,salary: 160000,city: "Hyderabad"})
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+{
+  acknowledged: true,
+  insertedId: ObjectId('699f114cbcdf3cb7c6e37b9a')
+}
+kollaDB> db.kolla.insertOne({id: 101,name: "rishita",age: 24,salary: 170000,city: "Hyderabad"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('699f117bbcdf3cb7c6e37b9b')
+}
+kollaDB> db.kolla.insertOne({id: 102,name: "Rupa", age: 22,salary: 90000,city: "Tenali"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('699f11b1bcdf3cb7c6e37b9c')
+}
+kollaDB> db.kolla.insertOne({id: 103,name: "Nandini",age: 23,salary: 85000,city: "Guntur"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('699f11d8bcdf3cb7c6e37b9d')
+}
+kollaDB> db.kolla.insertOne({id: 104,name: "Vihaan",age: 25,salary: 95000,city: "Vijayawada"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('699f11ffbcdf3cb7c6e37b9e')
+}
+kollaDB> db.kolla.insertMany([
+|   { id: 105, name: "Anvika", age: 21, salary: 155000, city: "Hyderabad" },
+|   { id: 106, name: "Kabir", age: 22, salary: 165000, city: "Hyderabad" },
+|   { id: 107, name: "Tanvi", age: 24, salary: 140000, city: "Tenali" },
+|   { id: 108, name: "Yash", age: 23, salary: 175000, city: "Hyderabad" },
+|   { id: 109, name: "Saanvi", age: 25, salary: 180000, city: "Hyderabad" },
+|   { id: 110, name: "Aditya", age: 26, salary: 120000, city: "Guntur" }
+| ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    '1': ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    '2': ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    '3': ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    '4': ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    '5': ObjectId('699f1212bcdf3cb7c6e37ba4')
+  }
+}
+kollaDB> db.kolla.find({id:100,city:"Hyderabad"})
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    id: 100,
+    name: 'meena',
+    age: 22,
+    salary: 160000,
+    city: 'Hyderabad'
+  }
+]
+kollaDB> db.kolla.find({age:22},{name:1,salary:1,_id:0})
+[
+  { name: 'meena', salary: 160000 },
+  { name: 'Rupa', salary: 90000 },
+  { name: 'Kabir', salary: 165000 }
+]
+kollaDB> db.kolla.find({id: { $gte: 100, $lte: 101 },age: { $gte: 20, $lte: 25 },city: "Hyderabad",salary: { $gt: 150000 }})
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    id: 100,
+    name: 'meena',
+    age: 22,
+    salary: 160000,
+    city: 'Hyderabad'
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    id: 101,
+    name: 'rishita',
+    age: 24,
+    salary: 170000,
+    city: 'Hyderabad'
+  }
+]
+kollaDB> db.kolla.aggregate([{$group: {_id: null,avgSalary: { $avg: "$salary" }} }])
+[ { _id: null, avgSalary: 139545.45454545456 } ]
+kollaDB> db.kolla.aggregate([{$group: {_id: null,maxSalary: { $max: "$salary" },minSalary: { $min: "$salary" }}}])
+[ { _id: null, maxSalary: 180000, minSalary: 85000 } ]
+kollaDB> db.kolla.aggregate([{$group: {_id: null,maxAge: { $max: "$age" },minAge: { $min: "$age" }}}])
+[ { _id: null, maxAge: 26, minAge: 21 } ]
+kollaDB> db.kolla.aggregate([{$project: {name: 1,salary: 1,calculatedSalary: {$divide: [{ $multiply: ["$salary", 2] },5]}}}])
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    calculatedSalary: 64000
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    calculatedSalary: 68000
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    calculatedSalary: 36000
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    calculatedSalary: 34000
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    calculatedSalary: 38000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    calculatedSalary: 62000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    calculatedSalary: 66000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    calculatedSalary: 56000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    calculatedSalary: 70000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    calculatedSalary: 72000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    calculatedSalary: 48000
+  }
+]
+kollaDB> db.kolla.aggregate([{$project: {salary: 1,areaType: {$switch: { branches: [{ case: { $eq: ["$city", "Hyderabad"] }, then: "Metro" },{ case: { $in: ["$city", ["Vijayawada", "Guntur"]] }, then: "Non-Metro" },{ case: { $eq: ["$city", "Tenali"] }, then: "Rural" ],default: "Other"}}}},{$group: {_id: "$areaType",totalSalary: { $sum: "$salary" }}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:258)
+
+> 1 | db.kolla.aggregate([{$project: {salary: 1,areaType: {$switch: { branches: [{ case: { $eq: ["$city", "Hyderabad"] }, then: "Metro" },{ case: { $in: ["$city", ["Vijayawada", "Guntur"]] }, then: "Non-Metro" },{ case: { $eq: ["$city", "Tenali"] }, then: "Rural" ],default: "Other"}}}},{$group: {_id: "$areaType",totalSalary: { $sum: "$salary" }}}])
+    |                                                                                                                                                                                                                                                                   ^
+  2 |
+
+kollaDB> db.kolla.aggregate([
+|   {
+|     $project: {
+|       salary: 1,
+|       areaType: {
+|         $switch: {
+|           branches: [
+|             { case: { $eq: ["$city", "Hyderabad"] }, then: "Metro" },
+|             { case: { $in: ["$city", ["Vijayawada", "Guntur"]] }, then: "Non-Metro" },
+|             { case: { $eq: ["$city", "Tenali"] }, then: "Rural" }
+|           ],
+|           default: "Other"
+|         }
+|       }
+|     }
+|   },
+|   {
+|     $group: {
+|       _id: "$areaType",
+|       totalSalary: { $sum: "$salary" }
+|     }
+|   }
+| ])
+[
+  { _id: 'Rural', totalSalary: 230000 },
+  { _id: 'Metro', totalSalary: 1005000 },
+  { _id: 'Non-Metro', totalSalary: 300000 }
+]
+kollaDB> db.kolla.aggregate([{$project: {name: 1,city: 1,salary: 1,areaType: {$switch: {branches: [ { case: { $eq: ["$city", "Hyderabad"] }, then: "Metro" },{ case: { $in: ["$city", ["Vijayawada", "Guntur"]] }, then: "Non-Metro" },{ case: { $eq: ["$city", "Tenali"] }, then: "Rural" }],default: "Other"}}}}])
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    city: 'Hyderabad',
+    areaType: 'Metro'
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    city: 'Hyderabad',
+    areaType: 'Metro'
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    city: 'Tenali',
+    areaType: 'Rural'
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    city: 'Guntur',
+    areaType: 'Non-Metro'
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    city: 'Vijayawada',
+    areaType: 'Non-Metro'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    city: 'Hyderabad',
+    areaType: 'Metro'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    city: 'Hyderabad',
+    areaType: 'Metro'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    city: 'Tenali',
+    areaType: 'Rural'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    city: 'Hyderabad',
+    areaType: 'Metro'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    city: 'Hyderabad',
+    areaType: 'Metro'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    city: 'Guntur',
+    areaType: 'Non-Metro'
+  }
+]
+kollaDB> db.kolla.aggregate([{$project: {name: 1,salary: 1,yearlySalary: { $multiply: ["$salary", 12] }}}])
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    yearlySalary: 1920000
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    yearlySalary: 2040000
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    yearlySalary: 1080000
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    yearlySalary: 1020000
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    yearlySalary: 1140000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    yearlySalary: 1860000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    yearlySalary: 1980000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    yearlySalary: 1680000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    yearlySalary: 2100000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    yearlySalary: 2160000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    yearlySalary: 1440000
+  }
+]
+kollaDB> db.kolla.aggregate([{$project: {name: 1,salary: 1,yearlySalary: { $multiply: ["$salary", 12] }, salaryCategory: {$cond: { if: { $gt: [{ $multiply: ["$salary", 12] }, 1200000] },then: "Above 12 Lakh",else: "Below 12 Lakh"}}}}])
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    yearlySalary: 1920000,
+    salaryCategory: 'Above 12 Lakh'
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    yearlySalary: 2040000,
+    salaryCategory: 'Above 12 Lakh'
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    yearlySalary: 1080000,
+    salaryCategory: 'Below 12 Lakh'
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    yearlySalary: 1020000,
+    salaryCategory: 'Below 12 Lakh'
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    yearlySalary: 1140000,
+    salaryCategory: 'Below 12 Lakh'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    yearlySalary: 1860000,
+    salaryCategory: 'Above 12 Lakh'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    yearlySalary: 1980000,
+    salaryCategory: 'Above 12 Lakh'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    yearlySalary: 1680000,
+    salaryCategory: 'Above 12 Lakh'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    yearlySalary: 2100000,
+    salaryCategory: 'Above 12 Lakh'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    yearlySalary: 2160000,
+    salaryCategory: 'Above 12 Lakh'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    yearlySalary: 1440000,
+    salaryCategory: 'Above 12 Lakh'
+  }
+]
+kollaDB> db.kolla.aggregate([{$project: {name: 1,salary: 1,yearlySalary: { $multiply: ["$salary", 12] },incomeTaxStatus: {$cond: {if: { $gt: [{ $multiply: ["$salary", 12] }, 500000] },then: "Eligible for Income Tax",else: "Not Eligible"} }}}])
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    yearlySalary: 1920000,
+    incomeTaxStatus: 'Eligible for Income Tax'
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    yearlySalary: 2040000,
+    incomeTaxStatus: 'Eligible for Income Tax'
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    yearlySalary: 1080000,
+    incomeTaxStatus: 'Eligible for Income Tax'
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    yearlySalary: 1020000,
+    incomeTaxStatus: 'Eligible for Income Tax'
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    yearlySalary: 1140000,
+    incomeTaxStatus: 'Eligible for Income Tax'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    yearlySalary: 1860000,
+    incomeTaxStatus: 'Eligible for Income Tax'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    yearlySalary: 1980000,
+    incomeTaxStatus: 'Eligible for Income Tax'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    yearlySalary: 1680000,
+    incomeTaxStatus: 'Eligible for Income Tax'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    yearlySalary: 2100000,
+    incomeTaxStatus: 'Eligible for Income Tax'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    yearlySalary: 2160000,
+    incomeTaxStatus: 'Eligible for Income Tax'
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    yearlySalary: 1440000,
+    incomeTaxStatus: 'Eligible for Income Tax'
+  }
+]
+kollaDB> db.kolla.aggregate([{$project: {name: 1,salary: 1,annualSalary: { $multiply: ["$salary", 12] },incomeTax: {$cond: {if: { $gt: [{ $multiply: ["$salary", 12] }, 500000] },then: {$multiply: [{ $multiply: ["$salary", 12] },0.05]},else: 0}} }}])
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    annualSalary: 1920000,
+    incomeTax: 96000
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    annualSalary: 2040000,
+    incomeTax: 102000
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    annualSalary: 1080000,
+    incomeTax: 54000
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    annualSalary: 1020000,
+    incomeTax: 51000
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    annualSalary: 1140000,
+    incomeTax: 57000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    annualSalary: 1860000,
+    incomeTax: 93000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    annualSalary: 1980000,
+    incomeTax: 99000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    annualSalary: 1680000,
+    incomeTax: 84000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    annualSalary: 2100000,
+    incomeTax: 105000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    annualSalary: 2160000,
+    incomeTax: 108000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    annualSalary: 1440000,
+    incomeTax: 72000
+  }
+]
+kollaDB> db.kolla.aggregate([{$project: {name: 1,salary: 1,BF: { $multiply: ["$salary", 0.12] } }}]) 
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    BF: 19200
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    BF: 20400
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    BF: 10800
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    BF: 10200
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    BF: 11400
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    BF: 18600
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    BF: 19800
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    BF: 16800
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    BF: 21000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    BF: 21600
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    BF: 14400
+  }
+]
+kollaDB> db.kolla.aggregate([{$project: {name: 1,salary: 1,variablePay: { $multiply: ["$salary", 0.5] }}}])
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    variablePay: 80000
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    variablePay: 85000
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    variablePay: 45000
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    variablePay: 42500
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    variablePay: 47500
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    variablePay: 77500
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    variablePay: 82500
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    variablePay: 70000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    variablePay: 87500
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    variablePay: 90000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    variablePay: 60000
+  }
+]
+kollaDB> db.kolla.aggregate([{$project: {name: 1,salary: 1,twoPercentSalary: { $multiply: ["$salary", 0.02] }}}])
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    twoPercentSalary: 3200
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    twoPercentSalary: 3400
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    twoPercentSalary: 1800
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    twoPercentSalary: 1700
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    twoPercentSalary: 1900
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    twoPercentSalary: 3100
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    twoPercentSalary: 3300
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    twoPercentSalary: 2800
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    twoPercentSalary: 3500
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    twoPercentSalary: 3600
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    twoPercentSalary: 2400
+  }
+]
+kollaDB> db.kolla.aggregate([{$project: {name: 1,salary: 1,foodCoupons: { $multiply: ["$salary", 0.05] } }}])
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    foodCoupons: 8000
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    foodCoupons: 8500
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    foodCoupons: 4500
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    foodCoupons: 4250
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    foodCoupons: 4750
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    foodCoupons: 7750
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    foodCoupons: 8250
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    foodCoupons: 7000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    foodCoupons: 8750
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    foodCoupons: 9000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    foodCoupons: 6000
+  }
+]
+kollaDB> db.kolla.aggregate([{$project: {name: 1,salary: 1,perDaySalary: { $divide: ["$salary", 30] } }}])
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    perDaySalary: 5333.333333333333
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    perDaySalary: 5666.666666666667
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    perDaySalary: 3000
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    perDaySalary: 2833.3333333333335
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    perDaySalary: 3166.6666666666665
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    perDaySalary: 5166.666666666667
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    perDaySalary: 5500
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    perDaySalary: 4666.666666666667
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    perDaySalary: 5833.333333333333
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    perDaySalary: 6000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    perDaySalary: 4000
+  }
+]
+kollaDB> db.kolla.aggregate([
+|   {
+|     $project: {
+|       name: 1,
+|       salary: 1,
+|       totalDays: 30,
+|       holidays: 8,
+|       workingDays: { $subtract: [30, 8] },
+|       workingSalary: {
+|         $multiply: [
+|           { $divide: ["$salary", 30] },
+|           { $subtract: [30, 8] }
+|         ]
+|       }
+|     }
+|   }
+| ])
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    workingDays: 22,
+    workingSalary: 117333.33333333333
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    workingDays: 22,
+    workingSalary: 124666.66666666667
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    workingDays: 22,
+    workingSalary: 66000
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    workingDays: 22,
+    workingSalary: 62333.333333333336
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    workingDays: 22,
+    workingSalary: 69666.66666666666
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    workingDays: 22,
+    workingSalary: 113666.66666666667
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    workingDays: 22,
+    workingSalary: 121000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    workingDays: 22,
+    workingSalary: 102666.66666666667
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    workingDays: 22,
+    workingSalary: 128333.33333333333
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    workingDays: 22,
+    workingSalary: 132000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    workingDays: 22,
+    workingSalary: 88000
+  }
+]
+kollaDB> db.kolla.aggregate([ {$project: {name: 1,salary: 1, totalDays: 30,holidays: 8,workingDays: { $subtract: [30, 8] },perDaySalary: { $divide: ["$salary", 30] },workingSalary: {$multiply: [{ $divide: ["$salary", 30] },{ $subtract: [30, 8] }]}}}])
+[
+  {
+    _id: ObjectId('699f114cbcdf3cb7c6e37b9a'),
+    name: 'meena',
+    salary: 160000,
+    workingDays: 22,
+    perDaySalary: 5333.333333333333,
+    workingSalary: 117333.33333333333
+  },
+  {
+    _id: ObjectId('699f117bbcdf3cb7c6e37b9b'),
+    name: 'rishita',
+    salary: 170000,
+    workingDays: 22,
+    perDaySalary: 5666.666666666667,
+    workingSalary: 124666.66666666667
+  },
+  {
+    _id: ObjectId('699f11b1bcdf3cb7c6e37b9c'),
+    name: 'Rupa',
+    salary: 90000,
+    workingDays: 22,
+    perDaySalary: 3000,
+    workingSalary: 66000
+  },
+  {
+    _id: ObjectId('699f11d8bcdf3cb7c6e37b9d'),
+    name: 'Nandini',
+    salary: 85000,
+    workingDays: 22,
+    perDaySalary: 2833.3333333333335,
+    workingSalary: 62333.333333333336
+  },
+  {
+    _id: ObjectId('699f11ffbcdf3cb7c6e37b9e'),
+    name: 'Vihaan',
+    salary: 95000,
+    workingDays: 22,
+    perDaySalary: 3166.6666666666665,
+    workingSalary: 69666.66666666666
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37b9f'),
+    name: 'Anvika',
+    salary: 155000,
+    workingDays: 22,
+    perDaySalary: 5166.666666666667,
+    workingSalary: 113666.66666666667
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba0'),
+    name: 'Kabir',
+    salary: 165000,
+    workingDays: 22,
+    perDaySalary: 5500,
+    workingSalary: 121000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba1'),
+    name: 'Tanvi',
+    salary: 140000,
+    workingDays: 22,
+    perDaySalary: 4666.666666666667,
+    workingSalary: 102666.66666666667
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba2'),
+    name: 'Yash',
+    salary: 175000,
+    workingDays: 22,
+    perDaySalary: 5833.333333333333,
+    workingSalary: 128333.33333333333
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba3'),
+    name: 'Saanvi',
+    salary: 180000,
+    workingDays: 22,
+    perDaySalary: 6000,
+    workingSalary: 132000
+  },
+  {
+    _id: ObjectId('699f1212bcdf3cb7c6e37ba4'),
+    name: 'Aditya',
+    salary: 120000,
+    workingDays: 22,
+    perDaySalary: 4000,
+    workingSalary: 88000
+  }
+]
+kollaDB> 

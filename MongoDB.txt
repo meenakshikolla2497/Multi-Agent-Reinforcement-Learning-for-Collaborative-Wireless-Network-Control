@@ -1,0 +1,1674 @@
+Last login: Sat Jan 24 09:12:12 on ttys000
+(base) manikantakolla@Manikantas-MacBook-Air-2 ~ % mongosh
+
+Current Mongosh Log ID:	697663e9d9ae35f56b786cd1
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.10
+Using MongoDB:		8.2.3
+Using Mongosh:		2.5.10
+mongosh 2.6.0 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2026-01-16T18:38:43.892+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use filmsDB
+switched to db filmsDB
+filmsDB> db.films.insertOne({title:"Vikram",year:2022,genre:"Action Thriller",director:"Lokesh Kangaraj",rating:8.3,boxoffice:"BlockBuster",language:"Tamil"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('69766478d9ae35f56b786cd2')
+}
+filmsDB> db.films.insertOne({title:"Leo",year:2023,genre:"Action Crime",director:"Lokesh Kangaraj",rating:7.9,boxoffice:"BlockBuster",language:"Tamil:})
+Uncaught:
+SyntaxError: Unterminated string constant. (1:134)
+
+> 1 | db.films.insertOne({title:"Leo",year:2023,genre:"Action Crime",director:"Lokesh Kangaraj",rating:7.9,boxoffice:"BlockBuster",language:"Tamil:})
+    |                                                                                                                                       ^
+  2 |
+
+filmsDB> db.films.insertOne({title:"Leo",year:2023,genre:"Action Crime",director:"Lokesh Kangaraj",rating:7.9,boxoffice:"BlockBuster",language:"Tamil"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6976656ad9ae35f56b786cd3')
+}
+filmsDB> db.films.insertOne({title:"RRR",year:2022,genre:"Action Drama",director:"S S Rajamouli",rating:8.1,boxoffice:"BlockBuster",language:"Telugu"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('697665c7d9ae35f56b786cd4')
+}
+filmsDB> db.films.insertOne({title:"3 Idiots",year:2009,genre:"Drama",director:"Rajkumar Hirani",rating:8.4,boxoffice:"BlockBuster",language:"Hindi"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6976661ed9ae35f56b786cd5')
+}
+filmsDB> db.films.insertOne({title:"Inception",year:2010,genre:"Science fiction",director:"Chirstopher Nolan",rating:8.8,boxoffice:"BlockBuster",language:"English"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('69766699d9ae35f56b786cd6')
+}
+filmsDB> db.films.insertMany([{title:"Interstellar",year:2014,genre:"Science fiction",director:"Christopher Nolan",rating:8.6,boxoffice:"BlockBuster",language:"English},{title:"The dark knight",year:2008,genre:"Action",director:"Christopher Nolan",rating:9.0,boxoffice:"BlockBuster",language:"English"},{title:"Baahubali The Conclusion",year:2017,genre:"Epic",director:"S S Rajamouli",rating:8.2,boxoffice:"BlockBuster",language:"Telugu"},{title:"Jailer",year:2023,genre:"Action Drama",director:"Nelson DilipKumar",rating:7.8,boxofice:"BlockBuster",language:"Tamil"},{title:"Enthiran",year:2010,genre:"Science Fiction",director:"Shankar",rating:7.1,boxoffice:"BlockBuster",language:"Tamil"}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:168)
+
+> 1 | db.films.insertMany([{title:"Interstellar",year:2014,genre:"Science fiction",director:"Christopher Nolan",rating:8.6,boxoffice:"BlockBuster",language:"English},{title:"The dark knight",year:2008,genre:"Action",director:"Christopher Nolan",rating:9.0,boxoffice:"BlockBuster",language:"English"},{title:"Baahubali The Conclusion",year:2017,genre:"Epic",director:"S S Rajamouli",rating:8.2,boxoffice:"BlockBuster",language:"Telugu"},{title:"Jailer",year:2023,genre:"Action Drama",director:"Nelson DilipKumar",rating:7.8,boxofice:"BlockBuster",language:"Tamil"},{title:"Enthiran",year:2010,genre:"Science Fiction",director:"Shankar",rating:7.1,boxoffice:"BlockBuster",language:"Tamil"}])
+    |                                                                                                                                                                         ^
+  2 |
+
+filmsDB> db.films.insertMany([{title:"Interstellar",year:2014,genre:"Science fiction",director:"Christopher Nolan",rating:8.6,boxoffice:"BlockBuster",language:"English},{title:"The dark knight",year:2008,genre:"Action",director:"Christopher Nolan",rating:9.0,boxoffice:"BlockBuster",language:"English"},{title:"Baahubali The Conclusion",year:2017,genre:"Epic",director:"S S Rajamouli",rating:8.2,boxoffice:"BlockBuster",language:"Telugu"},{title:"Jailer",year:2023,genre:"Action Drama",director:"Nelson DilipKumar",rating:7.8,boxofice:"BlockBuster",language:"Tamil"},{title:"Enthiran",year:2010,genre:"SciencefilmsDB> db.films.insertOne({title:"RRR",year:2022,genre:"Action Drama",director:"S S Rajamouli",rating:8.1,boxoffice:"BlockBuster",language:"Telugu"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('697668e3d9ae35f56b786cd7')
+}
+filmsDB> db.films.insertMany([{title:"Interstellar",year:2014,genre:"Science fiction",director:"Christopher Nolan",rating:8.6,boxoffice:"BlockBuster",language:"English},,{title:"The dark knight",year:2008,genre:"Action",director:"Christopher Nolan",rating:9.0,boxoffice:"BlockBuster",language:"English"},{title:"Baahubali The Conclusion",year:2017,genre:"Epic",director:"S S Rajamouli",rating:8.2,boxoffice:"BlockBuster",language:"Telugu"},{title:"Jailer",year:2023,genre:"Action Drama",director:"Nelson DilipKumar",rating:7.8,boxofice:"BlockBuster",language:"Tamil"},{title:"Enthiran",year:2010,genre:"Science Fiction",director:"Shankar",rating:7.1,boxoffice:"BlockBuster",language:"Tamil"}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:169)
+
+> 1 | db.films.insertMany([{title:"Interstellar",year:2014,genre:"Science fiction",director:"Christopher Nolan",rating:8.6,boxoffice:"BlockBuster",language:"English},,{title:"The dark knight",year:2008,genre:"Action",director:"Christopher Nolan",rating:9.0,boxoffice:"BlockBuster",language:"English"},{title:"Baahubali The Conclusion",year:2017,genre:"Epic",director:"S S Rajamouli",rating:8.2,boxoffice:"BlockBuster",language:"Telugu"},{title:"Jailer",year:2023,genre:"Action Drama",director:"Nelson DilipKumar",rating:7.8,boxofice:"BlockBuster",language:"Tamil"},{title:"Enthiran",year:2010,genre:"Science Fiction",director:"Shankar",rating:7.1,boxoffice:"BlockBuster",language:"Tamil"}])
+    |                                                                                                                                                                          ^
+  2 |
+
+filmsDB>  db.films.insertMany([{title:"Interstellar",year:2014,genre:"Science fiction",director:"Christopher Nolan",rating:8.6,boxoffice:"BlockBuster",language:"English"},{title:"The dark knight",year:2008,genre:"Action",director:"Christopher Nolan",rating:9.0,boxoffice:"BlockBuster",language:"English"},{title:"Baahubali The Conclusion",year:2017,genre:"Epic",director:"S S Rajamouli",rating:8.2,boxoffice:"BlockBuster",language:"Telugu"},{title:"Jailer",year:2023,genre:"Action Drama",director:"Nelson DilipKumar",rating:7.8,boxofice:"BlockBuster",language:"Tamil"},{title:"Enthiran",year:2010,genre:"Science Fiction",director:"Shankar",rating:7.1,boxoffice:"BlockBuster",language:"Tamil"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69766948d9ae35f56b786cd8'),
+    '1': ObjectId('69766948d9ae35f56b786cd9'),
+    '2': ObjectId('69766948d9ae35f56b786cda'),
+    '3': ObjectId('69766948d9ae35f56b786cdb'),
+    '4': ObjectId('69766948d9ae35f56b786cdc')
+  }
+}
+filmsDB> db.films.find()
+[
+  {
+    _id: ObjectId('697250bc124509b51e3f8589'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh kanagaraj',
+    rating: 8.3,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6972515d124509b51e3f858a'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kanagaraj',
+    rating: 7.9,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858e'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxOffice: 'Blockbuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858f'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Christopher Nolan',
+    rating: 8.8,
+    boxOffice: 'Blockbuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766478d9ae35f56b786cd2'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh Kangaraj',
+    rating: 8.3,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6976656ad9ae35f56b786cd3'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kangaraj',
+    rating: 7.9,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697665c7d9ae35f56b786cd4'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('6976661ed9ae35f56b786cd5'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxoffice: 'BlockBuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('69766699d9ae35f56b786cd6'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science fiction',
+    director: 'Chirstopher Nolan',
+    rating: 8.8,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('697668e3d9ae35f56b786cd7'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd8'),
+    title: 'Interstellar',
+    year: 2014,
+    genre: 'Science fiction',
+    director: 'Christopher Nolan',
+    rating: 8.6,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd9'),
+    title: 'The dark knight',
+    year: 2008,
+    genre: 'Action',
+    director: 'Christopher Nolan',
+    rating: 9,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cda'),
+    title: 'Baahubali The Conclusion',
+    year: 2017,
+    genre: 'Epic',
+    director: 'S S Rajamouli',
+    rating: 8.2,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdb'),
+    title: 'Jailer',
+    year: 2023,
+    genre: 'Action Drama',
+    director: 'Nelson DilipKumar',
+    rating: 7.8,
+    boxofice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdc'),
+    title: 'Enthiran',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Shankar',
+    rating: 7.1,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  }
+]
+filmsDB> db.films.find({language:"Tamil"})
+[
+  {
+    _id: ObjectId('697250bc124509b51e3f8589'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh kanagaraj',
+    rating: 8.3,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6972515d124509b51e3f858a'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kanagaraj',
+    rating: 7.9,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766478d9ae35f56b786cd2'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh Kangaraj',
+    rating: 8.3,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6976656ad9ae35f56b786cd3'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kangaraj',
+    rating: 7.9,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdb'),
+    title: 'Jailer',
+    year: 2023,
+    genre: 'Action Drama',
+    director: 'Nelson DilipKumar',
+    rating: 7.8,
+    boxofice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdc'),
+    title: 'Enthiran',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Shankar',
+    rating: 7.1,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  }
+]
+filmsDB> db.films.find({year:{$gt:2015}})
+[
+  {
+    _id: ObjectId('697250bc124509b51e3f8589'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh kanagaraj',
+    rating: 8.3,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6972515d124509b51e3f858a'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kanagaraj',
+    rating: 7.9,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766478d9ae35f56b786cd2'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh Kangaraj',
+    rating: 8.3,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6976656ad9ae35f56b786cd3'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kangaraj',
+    rating: 7.9,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697665c7d9ae35f56b786cd4'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('697668e3d9ae35f56b786cd7'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cda'),
+    title: 'Baahubali The Conclusion',
+    year: 2017,
+    genre: 'Epic',
+    director: 'S S Rajamouli',
+    rating: 8.2,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdb'),
+    title: 'Jailer',
+    year: 2023,
+    genre: 'Action Drama',
+    director: 'Nelson DilipKumar',
+    rating: 7.8,
+    boxofice: 'BlockBuster',
+    language: 'Tamil'
+  }
+]
+filmsDB> db.films.find({rating:{$gt:8}})
+[
+  {
+    _id: ObjectId('697250bc124509b51e3f8589'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh kanagaraj',
+    rating: 8.3,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858e'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxOffice: 'Blockbuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858f'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Christopher Nolan',
+    rating: 8.8,
+    boxOffice: 'Blockbuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766478d9ae35f56b786cd2'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh Kangaraj',
+    rating: 8.3,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697665c7d9ae35f56b786cd4'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('6976661ed9ae35f56b786cd5'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxoffice: 'BlockBuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('69766699d9ae35f56b786cd6'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science fiction',
+    director: 'Chirstopher Nolan',
+    rating: 8.8,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('697668e3d9ae35f56b786cd7'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd8'),
+    title: 'Interstellar',
+    year: 2014,
+    genre: 'Science fiction',
+    director: 'Christopher Nolan',
+    rating: 8.6,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd9'),
+    title: 'The dark knight',
+    year: 2008,
+    genre: 'Action',
+    director: 'Christopher Nolan',
+    rating: 9,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cda'),
+    title: 'Baahubali The Conclusion',
+    year: 2017,
+    genre: 'Epic',
+    director: 'S S Rajamouli',
+    rating: 8.2,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  }
+]
+filmsDB> db.films.find({director:"Christopher Nolan"})
+[
+  {
+    _id: ObjectId('697258c6124509b51e3f858f'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Christopher Nolan',
+    rating: 8.8,
+    boxOffice: 'Blockbuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd8'),
+    title: 'Interstellar',
+    year: 2014,
+    genre: 'Science fiction',
+    director: 'Christopher Nolan',
+    rating: 8.6,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd9'),
+    title: 'The dark knight',
+    year: 2008,
+    genre: 'Action',
+    director: 'Christopher Nolan',
+    rating: 9,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  }
+]
+filmsDB> db.films.find({},{title:1,ratingz;1,_id:0})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:33)
+
+> 1 | db.films.find({},{title:1,ratingz;1,_id:0})
+    |                                  ^
+  2 |
+
+filmsDB> db.films.find({},{title: 1,rating:1,_id:0})
+[
+  { title: 'Vikram', rating: 8.3 },
+  { title: 'Leo', rating: 7.9 },
+  { title: '3 Idiots', rating: 8.4 },
+  { title: 'Inception', rating: 8.8 },
+  { title: 'Vikram', rating: 8.3 },
+  { title: 'Leo', rating: 7.9 },
+  { title: 'RRR', rating: 8.1 },
+  { title: '3 Idiots', rating: 8.4 },
+  { title: 'Inception', rating: 8.8 },
+  { title: 'RRR', rating: 8.1 },
+  { title: 'Interstellar', rating: 8.6 },
+  { title: 'The dark knight', rating: 9 },
+  { title: 'Baahubali The Conclusion', rating: 8.2 },
+  { title: 'Jailer', rating: 7.8 },
+  { title: 'Enthiran', rating: 7.1 }
+]
+filmsDB> db.films.find({language: "Hindi", rating: { $gt: 8 }})
+[
+  {
+    _id: ObjectId('697258c6124509b51e3f858e'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxOffice: 'Blockbuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('6976661ed9ae35f56b786cd5'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxoffice: 'BlockBuster',
+    language: 'Hindi'
+  }
+]
+filmsDB> db.films.find({year: { $gte: 2010, $lte: 2020 } })
+[
+  {
+    _id: ObjectId('697258c6124509b51e3f858f'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Christopher Nolan',
+    rating: 8.8,
+    boxOffice: 'Blockbuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766699d9ae35f56b786cd6'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science fiction',
+    director: 'Chirstopher Nolan',
+    rating: 8.8,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd8'),
+    title: 'Interstellar',
+    year: 2014,
+    genre: 'Science fiction',
+    director: 'Christopher Nolan',
+    rating: 8.6,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cda'),
+    title: 'Baahubali The Conclusion',
+    year: 2017,
+    genre: 'Epic',
+    director: 'S S Rajamouli',
+    rating: 8.2,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdc'),
+    title: 'Enthiran',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Shankar',
+    rating: 7.1,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  }
+]
+filmsDB> db.films.find({boxOffice: "Blockbuster" })
+[
+  {
+    _id: ObjectId('697250bc124509b51e3f8589'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh kanagaraj',
+    rating: 8.3,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6972515d124509b51e3f858a'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kanagaraj',
+    rating: 7.9,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858e'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxOffice: 'Blockbuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858f'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Christopher Nolan',
+    rating: 8.8,
+    boxOffice: 'Blockbuster',
+    language: 'English'
+  }
+]
+filmsDB> db.filmd.find({language: { $ne: "English" } })
+
+filmsDB> db.films.find({language: { $ne: "English" } })
+[
+  {
+    _id: ObjectId('697250bc124509b51e3f8589'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh kanagaraj',
+    rating: 8.3,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6972515d124509b51e3f858a'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kanagaraj',
+    rating: 7.9,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858e'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxOffice: 'Blockbuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('69766478d9ae35f56b786cd2'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh Kangaraj',
+    rating: 8.3,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6976656ad9ae35f56b786cd3'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kangaraj',
+    rating: 7.9,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697665c7d9ae35f56b786cd4'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('6976661ed9ae35f56b786cd5'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxoffice: 'BlockBuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('697668e3d9ae35f56b786cd7'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cda'),
+    title: 'Baahubali The Conclusion',
+    year: 2017,
+    genre: 'Epic',
+    director: 'S S Rajamouli',
+    rating: 8.2,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdb'),
+    title: 'Jailer',
+    year: 2023,
+    genre: 'Action Drama',
+    director: 'Nelson DilipKumar',
+    rating: 7.8,
+    boxofice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdc'),
+    title: 'Enthiran',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Shankar',
+    rating: 7.1,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  }
+]
+filmsDB> db.films.find({rating: { $lt: 8 } })
+[
+  {
+    _id: ObjectId('6972515d124509b51e3f858a'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kanagaraj',
+    rating: 7.9,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6976656ad9ae35f56b786cd3'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kangaraj',
+    rating: 7.9,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdb'),
+    title: 'Jailer',
+    year: 2023,
+    genre: 'Action Drama',
+    director: 'Nelson DilipKumar',
+    rating: 7.8,
+    boxofice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdc'),
+    title: 'Enthiran',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Shankar',
+    rating: 7.1,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  }
+]
+filmsDB> db.films.find({ genre: "Action" })
+| 
+[
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd9'),
+    title: 'The dark knight',
+    year: 2008,
+    genre: 'Action',
+    director: 'Christopher Nolan',
+    rating: 9,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  }
+]
+filmsDB> db.films.find().sort({ rating: 1 })
+[
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdc'),
+    title: 'Enthiran',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Shankar',
+    rating: 7.1,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdb'),
+    title: 'Jailer',
+    year: 2023,
+    genre: 'Action Drama',
+    director: 'Nelson DilipKumar',
+    rating: 7.8,
+    boxofice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6972515d124509b51e3f858a'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kanagaraj',
+    rating: 7.9,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6976656ad9ae35f56b786cd3'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kangaraj',
+    rating: 7.9,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697665c7d9ae35f56b786cd4'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('697668e3d9ae35f56b786cd7'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cda'),
+    title: 'Baahubali The Conclusion',
+    year: 2017,
+    genre: 'Epic',
+    director: 'S S Rajamouli',
+    rating: 8.2,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('697250bc124509b51e3f8589'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh kanagaraj',
+    rating: 8.3,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766478d9ae35f56b786cd2'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh Kangaraj',
+    rating: 8.3,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858e'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxOffice: 'Blockbuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('6976661ed9ae35f56b786cd5'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxoffice: 'BlockBuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd8'),
+    title: 'Interstellar',
+    year: 2014,
+    genre: 'Science fiction',
+    director: 'Christopher Nolan',
+    rating: 8.6,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858f'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Christopher Nolan',
+    rating: 8.8,
+    boxOffice: 'Blockbuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766699d9ae35f56b786cd6'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science fiction',
+    director: 'Chirstopher Nolan',
+    rating: 8.8,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd9'),
+    title: 'The dark knight',
+    year: 2008,
+    genre: 'Action',
+    director: 'Christopher Nolan',
+    rating: 9,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  }
+]
+filmsDB> db.films.find().sort({ year: -1 })
+[
+  {
+    _id: ObjectId('6972515d124509b51e3f858a'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kanagaraj',
+    rating: 7.9,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6976656ad9ae35f56b786cd3'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kangaraj',
+    rating: 7.9,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdb'),
+    title: 'Jailer',
+    year: 2023,
+    genre: 'Action Drama',
+    director: 'Nelson DilipKumar',
+    rating: 7.8,
+    boxofice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697250bc124509b51e3f8589'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh kanagaraj',
+    rating: 8.3,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766478d9ae35f56b786cd2'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh Kangaraj',
+    rating: 8.3,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697665c7d9ae35f56b786cd4'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('697668e3d9ae35f56b786cd7'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cda'),
+    title: 'Baahubali The Conclusion',
+    year: 2017,
+    genre: 'Epic',
+    director: 'S S Rajamouli',
+    rating: 8.2,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd8'),
+    title: 'Interstellar',
+    year: 2014,
+    genre: 'Science fiction',
+    director: 'Christopher Nolan',
+    rating: 8.6,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858f'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Christopher Nolan',
+    rating: 8.8,
+    boxOffice: 'Blockbuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766699d9ae35f56b786cd6'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science fiction',
+    director: 'Chirstopher Nolan',
+    rating: 8.8,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdc'),
+    title: 'Enthiran',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Shankar',
+    rating: 7.1,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858e'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxOffice: 'Blockbuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('6976661ed9ae35f56b786cd5'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxoffice: 'BlockBuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd9'),
+    title: 'The dark knight',
+    year: 2008,
+    genre: 'Action',
+    director: 'Christopher Nolan',
+    rating: 9,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  }
+]
+filmsDB> db.films.find().limit(5)
+[
+  {
+    _id: ObjectId('697250bc124509b51e3f8589'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh kanagaraj',
+    rating: 8.3,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6972515d124509b51e3f858a'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kanagaraj',
+    rating: 7.9,
+    boxOffice: 'Blockbuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858e'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxOffice: 'Blockbuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('697258c6124509b51e3f858f'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Christopher Nolan',
+    rating: 8.8,
+    boxOffice: 'Blockbuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766478d9ae35f56b786cd2'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh Kangaraj',
+    rating: 8.3,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  }
+]
+filmsDB> db.films.find().skip(3)
+[
+  {
+    _id: ObjectId('697258c6124509b51e3f858f'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Christopher Nolan',
+    rating: 8.8,
+    boxOffice: 'Blockbuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766478d9ae35f56b786cd2'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh Kangaraj',
+    rating: 8.3,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('6976656ad9ae35f56b786cd3'),
+    title: 'Leo',
+    year: 2023,
+    genre: 'Action Crime',
+    director: 'Lokesh Kangaraj',
+    rating: 7.9,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('697665c7d9ae35f56b786cd4'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('6976661ed9ae35f56b786cd5'),
+    title: '3 Idiots',
+    year: 2009,
+    genre: 'Drama',
+    director: 'Rajkumar Hirani',
+    rating: 8.4,
+    boxoffice: 'BlockBuster',
+    language: 'Hindi'
+  },
+  {
+    _id: ObjectId('69766699d9ae35f56b786cd6'),
+    title: 'Inception',
+    year: 2010,
+    genre: 'Science fiction',
+    director: 'Chirstopher Nolan',
+    rating: 8.8,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('697668e3d9ae35f56b786cd7'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd8'),
+    title: 'Interstellar',
+    year: 2014,
+    genre: 'Science fiction',
+    director: 'Christopher Nolan',
+    rating: 8.6,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd9'),
+    title: 'The dark knight',
+    year: 2008,
+    genre: 'Action',
+    director: 'Christopher Nolan',
+    rating: 9,
+    boxoffice: 'BlockBuster',
+    language: 'English'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cda'),
+    title: 'Baahubali The Conclusion',
+    year: 2017,
+    genre: 'Epic',
+    director: 'S S Rajamouli',
+    rating: 8.2,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdb'),
+    title: 'Jailer',
+    year: 2023,
+    genre: 'Action Drama',
+    director: 'Nelson DilipKumar',
+    rating: 7.8,
+    boxofice: 'BlockBuster',
+    language: 'Tamil'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdc'),
+    title: 'Enthiran',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Shankar',
+    rating: 7.1,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  }
+]
+filmsDB> db.films.countDocuments()
+15
+filmsDB> db.films.countDocuments({ language: "Tamil" })
+6
+filmsDB> db.films.find({ rating: 8.1 })
+[
+  {
+    _id: ObjectId('697665c7d9ae35f56b786cd4'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('697668e3d9ae35f56b786cd7'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  }
+]
+filmsDB> db.films.find({ director: /^S/ })
+[
+  {
+    _id: ObjectId('697665c7d9ae35f56b786cd4'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('697668e3d9ae35f56b786cd7'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cda'),
+    title: 'Baahubali The Conclusion',
+    year: 2017,
+    genre: 'Epic',
+    director: 'S S Rajamouli',
+    rating: 8.2,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdc'),
+    title: 'Enthiran',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Shankar',
+    rating: 7.1,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  }
+]
+filmsDB> db.films.find({ director: /^S/ })
+[
+  {
+    _id: ObjectId('697665c7d9ae35f56b786cd4'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('697668e3d9ae35f56b786cd7'),
+    title: 'RRR',
+    year: 2022,
+    genre: 'Action Drama',
+    director: 'S S Rajamouli',
+    rating: 8.1,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cda'),
+    title: 'Baahubali The Conclusion',
+    year: 2017,
+    genre: 'Epic',
+    director: 'S S Rajamouli',
+    rating: 8.2,
+    boxoffice: 'BlockBuster',
+    language: 'Telugu'
+  },
+  {
+    _id: ObjectId('69766948d9ae35f56b786cdc'),
+    title: 'Enthiran',
+    year: 2010,
+    genre: 'Science Fiction',
+    director: 'Shankar',
+    rating: 7.1,
+    boxoffice: 'BlockBuster',
+    language: 'Tamil'
+  }
+]
+filmsDB> db.films.updateOne({ title: "Leo" }, { $set: { rating: 8.0 } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateOne({ title: "Vikram" }, { $set: { boxOffice: "Super Blockbuster" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateOne({ title: "RRR" }, { $set: { language: "Telugu/Tamil" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateOne({ title: "Jailer" }, { $set: { director: "Nelson" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateOne({ title: "Inception" }, { $inc: { rating: 0.1 } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateOne({ title: "Enthiran" }, { $set: { genre: "Sci-Fi Action" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateOne({ title: "3 Idiots" }, { $set: { year: 2010 } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateMany({ language: "Tamil" }, { $set: { rating: 8.0 } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 6,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateMany({ language: "English" }, { $set: { boxOffice: "Blockbuster" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 4,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateMany({ genre: "Action" }, { $set: { genre: "Action Thriller" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateOne({ title: "The Dark Knight" }, { $set: { awards: "Oscar" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateMany({}, { $set: { country: "India/USA" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 15,
+  modifiedCount: 15,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateOne({ title: "The Dark Knight" }, { $unset: { awards: "" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+filmsDB> db.films.updateMany({}, { $rename: { boxOffice: "collection" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 15,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+filmsDB> db.films.replaceOn({title:"Leo"},{title:"Leo",year:2023,genre:"Action",director:"Lokesh",rating:8.0,collection:"BlockBuster",language:"Tamil"}}
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:142)
+
+> 1 | db.films.replaceOn({title:"Leo"},{title:"Leo",year:2023,genre:"Action",director:"Lokesh",rating:8.0,collection:"BlockBuster",language:"Tamil"}}
+    |                                                                                                                                               ^
+  2 |
+
+filmsDB> db.films.replaceOne({title:"Leo"},{title:"Leo",year:2023,genre:"Action",director:"Lokesh",rating:8.0,collection:"BlockBuster",language:"Tamil"}}
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:143)
+
+> 1 | db.films.replaceOne({title:"Leo"},{title:"Leo",year:2023,genre:"Action",director:"Lokesh",rating:8.0,collection:"BlockBuster",language:"Tamil"}}
+    |                                                                                                                                                ^
+  2 |
+
+filmsDB>  db.films.replaceOne({title:"Leo"},{title:"Leo",year:2023,genre:"Action",director:"Lokesh",rating:8.0,collection:"BlockBuster",language:"Tamil"}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:144)
+
+> 1 |  db.films.replaceOne({title:"Leo"},{title:"Leo",year:2023,genre:"Action",director:"Lokesh",rating:8.0,collection:"BlockBuster",language:"Tamil"}})
+    |                                                                                                                                                 ^
+  2 |
+
+filmsDB> db.films.replaceOne({title:"Leo"},{title:"Leo",year:2023,genre:"Action",director:"Lokesh",rating:8.0,collection:"BlockBuster",language:"Tamil"}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:143)
+
+> 1 | db.films.replaceOne({title:"Leo"},{title:"Leo",year:2023,genre:"Action",director:"Lokesh",rating:8.0,collection:"BlockBuster",language:"Tamil"}})
+    |                                                                                                                                                ^
+  2 |
+
+filmsDB> db.films.replaceOne(
+|   { title: "Leo" },
+|   {
+|     title: "Leo",
+|     year: 2023,
+|     genre: "Action",
+|     director: "Lokesh",
+|     rating: 8.0,
+|     collection: "Blockbuster",
+|     language: "Tamil"
+|   }
+| })
+Uncaught:
+SyntaxError: Unexpected token, expected "," (12:0)
+
+  10 |     language: "Tamil"
+  11 |   }
+> 12 | })
+     | ^
+  13 |
+
+filmsDB> db.films.replaceOne(
+|   { title: "Leo" },
+|   {
+|     title: "Leo",
+|     year: 2023,
+|     genre: "Action",
+|     director: "Lokesh",
+|     rating: 8.0,
+|     collection: "Blockbuster",
+|     language: "Tamil"
+|   }
+| )
+| 
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+filmsDB> db.films.deleteOne({ title: "Leo" })
+{ acknowledged: true, deletedCount: 1 }
+filmsDB> db.films.deleteOne({ rating: { $lt: 7 } })
+{ acknowledged: true, deletedCount: 0 }
+filmsDB> db.films.deleteMany({ language: "Hindi" })
+{ acknowledged: true, deletedCount: 2 }
+filmsDB> db.films.deleteMany({ year: { $lt: 2005 } })
+{ acknowledged: true, deletedCount: 0 }
+filmsDB> db.films.deleteMany({ rating: { $lt: 7.5 } })
+{ acknowledged: true, deletedCount: 0 }
+filmsDB> db.films.aggregate([{$group:{_id:"4language",count:{$sum:1}}}])
+[ { _id: '4language', count: 12 } ]
+filmsDB> db.films.aggregate([{ $group: { _id: null, avgRating: { $avg: "$rating" } }}])
+[ { _id: null, avgRating: 8.308333333333334 } ]
+filmsDB> db.films.find().sort({ rating: -1 }).limit(1)
+[
+  {
+    _id: ObjectId('69766948d9ae35f56b786cd9'),
+    title: 'The dark knight',
+    year: 2008,
+    genre: 'Action Thriller',
+    director: 'Christopher Nolan',
+    rating: 9,
+    boxoffice: 'BlockBuster',
+    language: 'English',
+    country: 'India/USA',
+    collection: 'Blockbuster'
+  }
+]
+filmsDB> db.films.find().sort({ rating: 1 }).limit(1)
+[
+  {
+    _id: ObjectId('697250bc124509b51e3f8589'),
+    title: 'Vikram',
+    year: 2022,
+    genre: 'Action Thriller',
+    director: 'Lokesh kanagaraj',
+    rating: 8,
+    language: 'Tamil',
+    country: 'India/USA',
+    collection: 'Super Blockbuster'
+  }
+]
+filmsDB> db.films.distinct("language")
+[ 'English', 'Tamil', 'Telugu', 'Telugu/Tamil' ]
+filmsDB> db.films.find().pretty()
+
+
+

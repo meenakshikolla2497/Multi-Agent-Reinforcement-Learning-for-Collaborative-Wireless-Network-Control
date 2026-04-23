@@ -1,0 +1,42 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\usepackage{lmodern}
+\pgfplotsset{compat=1.17}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+ width=20cm,
+ height=15cm,
+ tick label style={font=\fontsize{24}{28}\selectfont},
+ label style={font=\fontsize{24}{28}\selectfont},
+ title style={font=\fontsize{24}{28}\selectfont},
+ title={Nodes vs Throughput},
+ xlabel={Number of Nodes},
+ ylabel={Throughput (Kbps)},
+ xmin=5, xmax=20,
+ ymin=14, ymax=31,
+ xtick={5,10,15,20},
+ ytick={15,18,21,24,27,30},
+ legend style={
+ font=\fontsize{24}{28}\selectfont,
+ at={(0.02,0.95)},
+ anchor=north west,
+ draw=black,
+ fill=white
+ },
+ ymajorgrids=true,
+ xmajorgrids=true,
+ grid style=dashed
+]
+
+% Throughput line
+\addplot+[mark=o,color=blue,line width=2pt] coordinates {
+ (5,15)(10,30)(15,24)(20,30)
+};
+
+\legend{Proposed}
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
